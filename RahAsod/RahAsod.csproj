@@ -6,7 +6,6 @@
 
   <ItemGroup>
     <Folder Include="Pages\CustomerRegistrationPages\" />
-    <Folder Include="Pages\TypesOfInsurancePages\" />
   </ItemGroup>
 
 </Project>

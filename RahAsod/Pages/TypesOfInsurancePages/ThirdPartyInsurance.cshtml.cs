@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace RahAsod.Pages.MainPage
+namespace RahAsod.Pages.TypesOfInsurancePages
 {
-    public class MainPageModel : PageModel
+    public class ThirdPartyInsuranceModel : PageModel
     {
         public void OnGet()
         {

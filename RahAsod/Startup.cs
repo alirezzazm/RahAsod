@@ -26,7 +26,7 @@ namespace RahAsod
             services.AddRazorPages()
             .AddRazorPagesOptions(options =>
              {
-                 options.Conventions.AddPageRoute("/MainPage/MainPage", "");
+                 options.Conventions.AddPageRoute("/MainPage/HomePage", "");
              });
         }
 
