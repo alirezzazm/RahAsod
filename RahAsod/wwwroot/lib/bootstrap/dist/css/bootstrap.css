@@ -3611,10 +3611,16 @@ input[type="button"].btn-block {
   margin-right: 1rem;
 }
 
-.custom-control-input {
-  position: absolute;
-  z-index: -1;
-  opacity: 0;
+
+
+
+.custom-control-input{
+    position: unset;
+    left: 0;
+    z-index: -1;
+    width: 2.5rem;
+    height: 2.5rem;
+    opacity: 20;
 }
 
 .custom-control-input:checked ~ .custom-control-label::before {
@@ -10036,3 +10042,5 @@ a.text-dark:hover, a.text-dark:focus {
   }
 }
 /*# sourceMappingURL=bootstrap.css.map */
+
+
