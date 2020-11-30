@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <Folder Include="Pages\CustomerRegistrationPages\" />
+    <Folder Include="Pages\Admin\" />
   </ItemGroup>
 
   <ItemGroup>
