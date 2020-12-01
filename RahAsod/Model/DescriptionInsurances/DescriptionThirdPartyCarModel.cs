@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 namespace RahAsod.Model
 {
     //شرح بیمه های شخص ثالث مشتری
-    public class DescriptionCarModel
+    public class DescriptionThirdPartyCarModel
     {           
-        public int DescriptionCarID { get; set; }
+        public int DescriptionThirdPartyCarID { get; set; }
         public string TagCar { get; set; }
         public int ModelCar { get; set; }
         public string TypeOfCar { get; set; }
