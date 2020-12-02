@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
+using System.Text;
 
-namespace RahAsod.Model
+namespace DataLayer.Models
 {
-    //مدل سازی بیمه های مشتری
-    public class InsurancesForCustomerModel
+   public class InsurancesOfCustomer
     {
+        //مدل سازی بیمه های مشتری
+        [Key]
         public int InsurancesForCustomerID { get; set; }
         public string NameInsurances { get; set; }
         public string DescriptionInsurances { get; set; }

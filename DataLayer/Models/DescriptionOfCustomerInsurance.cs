@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
+using System.Text;
 
-namespace RahAsod.Model
+namespace DataLayer.Models
 {
-    //شرح بیمه های مشتری
-    public class DescriptionInsurancesModel
+    public class DescriptionOfCustomerInsurance
     {
+        //شرح بیمه های مشتری
+        [Key]
         public int DescriptionInsurancesID { get; set; }
         public string NameInsurances { get; set; }
         public string PreviousNumberInsurance { get; set; }
@@ -17,6 +18,5 @@ namespace RahAsod.Model
         public string StartInsurances { get; set; }
         public string EndInsurances { get; set; }
         public string DescriptionInsurances { get; set; }
-        
     }
 }

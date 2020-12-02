@@ -1,0 +1,89 @@
+﻿@page
+@model RahAsod.Pages.TypesOfInsurancePages.CarThirdPartyInsuranceModel
+
+@{
+    ViewData["Title"] = "CarThirdPartyInsurance";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="DescriptionOfThirdPartyInsurance.CarTag" class="control-label"></label>
+                <input asp-for="DescriptionOfThirdPartyInsurance.CarTag" class="form-control" />
+                <span asp-validation-for="DescriptionOfThirdPartyInsurance.CarTag" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DescriptionOfThirdPartyInsurance.CarModel" class="control-label"></label>
+                <input asp-for="DescriptionOfThirdPartyInsurance.CarModel" class="form-control" />
+                <span asp-validation-for="DescriptionOfThirdPartyInsurance.CarModel" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DescriptionOfThirdPartyInsurance.TypeOfCar" class="control-label"></label>
+                <input asp-for="DescriptionOfThirdPartyInsurance.TypeOfCar" class="form-control" />
+                <span asp-validation-for="DescriptionOfThirdPartyInsurance.TypeOfCar" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DescriptionOfThirdPartyInsurance.StyleCar" class="control-label"></label>
+                <input asp-for="DescriptionOfThirdPartyInsurance.StyleCar" class="form-control" />
+                <span asp-validation-for="DescriptionOfThirdPartyInsurance.StyleCar" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DescriptionOfThirdPartyInsurance.CarChassisNumber" class="control-label"></label>
+                <input asp-for="DescriptionOfThirdPartyInsurance.CarChassisNumber" class="form-control" />
+                <span asp-validation-for="DescriptionOfThirdPartyInsurance.CarChassisNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DescriptionOfThirdPartyInsurance.CarEngineNumber" class="control-label"></label>
+                <input asp-for="DescriptionOfThirdPartyInsurance.CarEngineNumber" class="form-control" />
+                <span asp-validation-for="DescriptionOfThirdPartyInsurance.CarEngineNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DescriptionOfThirdPartyInsurance.CarColor" class="control-label"></label>
+                <input asp-for="DescriptionOfThirdPartyInsurance.CarColor" class="form-control" />
+                <span asp-validation-for="DescriptionOfThirdPartyInsurance.CarColor" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DescriptionOfThirdPartyInsurance.VinCar" class="control-label"></label>
+                <input asp-for="DescriptionOfThirdPartyInsurance.VinCar" class="form-control" />
+                <span asp-validation-for="DescriptionOfThirdPartyInsurance.VinCar" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DescriptionOfThirdPartyInsurance.DriverDiscountPercentage" class="control-label"></label>
+                <input asp-for="DescriptionOfThirdPartyInsurance.DriverDiscountPercentage" class="form-control" />
+                <span asp-validation-for="DescriptionOfThirdPartyInsurance.DriverDiscountPercentage" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DescriptionOfThirdPartyInsurance.PercentageOfInsuranceDiscount" class="control-label"></label>
+                <input asp-for="DescriptionOfThirdPartyInsurance.PercentageOfInsuranceDiscount" class="form-control" />
+                <span asp-validation-for="DescriptionOfThirdPartyInsurance.PercentageOfInsuranceDiscount" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DescriptionOfThirdPartyInsurance.UsedCar" class="control-label"></label>
+                <input asp-for="DescriptionOfThirdPartyInsurance.UsedCar" class="form-control" />
+                <span asp-validation-for="DescriptionOfThirdPartyInsurance.UsedCar" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DescriptionOfThirdPartyInsurance.CarCapacity" class="control-label"></label>
+                <input asp-for="DescriptionOfThirdPartyInsurance.CarCapacity" class="form-control" />
+                <span asp-validation-for="DescriptionOfThirdPartyInsurance.CarCapacity" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="DescriptionOfThirdPartyInsurance.TowTruckCar" /> @Html.DisplayNameFor(model => model.DescriptionOfThirdPartyInsurance.TowTruckCar)
+                </label>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="ثبت" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
