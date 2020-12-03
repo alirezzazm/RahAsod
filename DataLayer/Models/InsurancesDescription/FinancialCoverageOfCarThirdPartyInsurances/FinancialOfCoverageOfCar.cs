@@ -5,6 +5,8 @@ using System.Text;
 
 namespace DataLayer.Models.InsurancesDescription.FinancialCoverageCarThirdPartyInsurances
 {
+
+    //مدلسازی برای اضافه کردن مالی های جدید از طریق ادمین
     public class FinancialOfCoverageOfCar
     {
         [Key]
@@ -13,7 +15,8 @@ namespace DataLayer.Models.InsurancesDescription.FinancialCoverageCarThirdPartyI
         [Display(Name = "مقدار مالی را اضافه کنید")]
         [Required(ErrorMessage = "لطفا {0} را وارد کنيد ")]
         public string FinancialSelected { get; set; }
-
+        [Display(Name = "ضریب مالی را اضافه کنید")]
+        [Required(ErrorMessage = "لطفا {0} را وارد کنيد ")]
         public float FinancialValue { get; set; }
     }
 }

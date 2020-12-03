@@ -7,7 +7,13 @@ namespace DataLayer.Models
 {
    public class LoginCustomer
     {
+        //لاگین کردن مشتری
         [Key]
-        public int NationalCode { get; set; }
+        [Display(Name = "کدملی ")]
+        [Required(ErrorMessage = "لطفا {0} را وارد کنيد ")]
+        public int NationalCodeCustomer { get; set; }
+        [Display(Name = "پسوورد ")]
+        [Required(ErrorMessage = "لطفا {0} را وارد کنيد ")]
+        public string PasswordCustomer { get; set; }
     }
 }

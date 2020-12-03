@@ -5,6 +5,7 @@ using System.Text;
 
 namespace DataLayer.Models.InsurancesDescription.ConditionOfCarBodyInsurances
 {
+    //اضافه کردن شرط برای بیمه بدنه از طریق ادمین
     public class ConditionOfCarBody
     {
         [Key]

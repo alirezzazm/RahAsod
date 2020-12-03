@@ -5,6 +5,7 @@ using System.Text;
 
 namespace DataLayer.Models.InsurancesDescription
 {
+    //شرح بیمه نامه بدنه مشتری
     public class DescriptionOfBodyInsurance
     {
         [Key]

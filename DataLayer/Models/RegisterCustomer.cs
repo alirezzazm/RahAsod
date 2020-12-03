@@ -7,15 +7,30 @@ namespace DataLayer.Models
 {
    public class RegisterCustomer
     {
+        //ثبت نام و دریافت اطلاعات مشتری
         [Key]
         public int CustomerID { get; set; }
-        public string Name { get; set; }
-        public string Family { get; set; }
-        public string NumberPhone { get; set; }
-        public string NationalCode { get; set; }
-        public string Adrress { get; set; }
-        public string Email { get; set; }
-        public string HomeNumber { get; set; }
-        public string InsurancesForCustomer { get; set; }
+        [Display(Name = "نام ")]
+        [Required(ErrorMessage = "لطفا {0} را وارد کنيد ")]
+        public string NameCustomer { get; set; }
+        [Display(Name = "نام ونام خانوادگی ")]
+        [Required(ErrorMessage = "لطفا {0} را وارد کنيد ")]
+        public string FamilyCustomer { get; set; }
+        [Display(Name = "شماره همراه  ")]
+        [Required(ErrorMessage = "لطفا {0} را وارد کنيد ")]
+        public string NumberPhoneCustomer { get; set; }
+        [Display(Name = "کد ملی ")]
+        [Required(ErrorMessage = "لطفا {0} را وارد کنيد ")]
+        public string NationalCodeCustomer { get; set; }
+        [Display(Name = "آدرس ")]
+        [Required(ErrorMessage = "لطفا {0} را وارد کنيد ")]
+        public string AdrressCustomer { get; set; }
+        [Display(Name = "ایمیل ")]
+        [Required(ErrorMessage = "لطفا {0} را وارد کنيد ")]
+        public string EmailCustomer { get; set; }
+        [Display(Name = "شماره منزل ")]
+        [Required(ErrorMessage = "لطفا {0} را وارد کنيد ")]
+        public string HomeNumberCustomer { get; set; }
+
     }
 }
