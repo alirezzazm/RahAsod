@@ -6,17 +6,21 @@
     Layout = "~/Pages/Shared/_Layout.cshtml";
 }
 <style>
-  
+
     #main {
         padding: 2% 5%;
         background-color: azure;
-        direction:rtl;
-        text-align:right
+        direction: rtl;
+        text-align: right
     }
 </style>
 <div id="main" class="container">
-    <div class="form-group" style="padding-top:8%">
+    <div class="form-group" style="padding-top:3%">
         <div class="col-md-12">
+            <div class="card-header text-center">
+                <h2>بيمه شخض ثالث</h2>
+            </div>
+            <br />
             <form method="post">
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                 <div class="form-group col-md-2">
@@ -25,9 +29,9 @@
                     <span asp-validation-for="DescriptionOfThirdPartyInsurance.CarTag" class="text-danger"></span>
                 </div>
                 <div class="row">
-                    <div class="col-md-4">
+                    <div class="col-md-3">
                         <div class="form-group">
-                           @* <label asp-for="DescriptionOfThirdPartyInsurance.TypeOfCar" class="control-label"></label>*@
+                            @* <label asp-for="DescriptionOfThirdPartyInsurance.TypeOfCar" class="control-label"></label>*@
                             <select asp-for="DescriptionOfThirdPartyInsurance.TypeOfCar" class="form-control">
                                 <option disabled selected hidden>نوع وسیله نقلیه</option>
                                 <option>1 ماشین</option>
@@ -38,9 +42,9 @@
                             <span asp-validation-for="DescriptionOfThirdPartyInsurance.TypeOfCar" class="text-danger"></span>
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-3">
                         <div class="form-group">
-                          @*k  <label asp-for="DescriptionOfThirdPartyInsurance.StyleCar" class="control-label"></label>*@
+                            @*k  <label asp-for="DescriptionOfThirdPartyInsurance.StyleCar" class="control-label"></label>*@
                             <select asp-for="DescriptionOfThirdPartyInsurance.StyleCar" class="form-control">
                                 <option disabled selected hidden>نوع ماشین</option>
                                 <option>1 ماشین</option>
@@ -51,9 +55,9 @@
                             <span asp-validation-for="DescriptionOfThirdPartyInsurance.StyleCar" class="text-danger"></span>
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-3">
                         <div class="form-group">
-                          @*  <label asp-for="DescriptionOfThirdPartyInsurance.CarModel" class="control-label"></label>*@
+                            @*  <label asp-for="DescriptionOfThirdPartyInsurance.CarModel" class="control-label"></label>*@
                             <select asp-for="DescriptionOfThirdPartyInsurance.CarModel" class="form-control">
                                 <option disabled selected hidden>مدل</option>
                                 <option>1399</option>
@@ -70,49 +74,55 @@
                             <span asp-validation-for="DescriptionOfThirdPartyInsurance.CarModel" class="text-danger"></span>
                         </div>
                     </div>
+                    <div class="form-group col-md-3">
+                        @*  <label asp-for="DescriptionOfThirdPartyInsurance.CarColor" class="control-label"></label>*@
+                        <select asp-for="DescriptionOfThirdPartyInsurance.CarColor" class="form-control">
+                            <option disabled selected hidden>رنگ</option>
+                            <option>سفيد</option>
+                            <option>مشکي</option>
+                            <option>آبي</option>
+                            <option>قرمز</option>
+                            <option>نوک مدادي</option>
+                            <option>بژ</option>
+                            <option>سبز</option>
+                            <option>قهوه اي</option>
+                        </select>
+                        <span asp-validation-for="DescriptionOfThirdPartyInsurance.CarColor" class="text-danger"></span>
+                    </div>
                 </div>
-
-
+                <hr />
 
 
                 <div class="row">
                     <div class="col-md-4">
                         <div class="form-group">
-                            <label asp-for="DescriptionOfThirdPartyInsurance.CarChassisNumber" class="control-label"></label>
-                            <input asp-for="DescriptionOfThirdPartyInsurance.CarChassisNumber" class="form-control" />
+                            @* <label asp-for="DescriptionOfThirdPartyInsurance.CarChassisNumber" class="control-label"></label>*@
+                            <input asp-for="DescriptionOfThirdPartyInsurance.CarChassisNumber" placeholder="شماره شاسي" class="form-control" />
                             <span asp-validation-for="DescriptionOfThirdPartyInsurance.CarChassisNumber" class="text-danger"></span>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="form-group">
-                            <label asp-for="DescriptionOfThirdPartyInsurance.VinCar" class="control-label"></label>
-                            <input asp-for="DescriptionOfThirdPartyInsurance.VinCar" class="form-control" />
+                            @* <label asp-for="DescriptionOfThirdPartyInsurance.VinCar" class="control-label"></label>*@
+                            <input asp-for="DescriptionOfThirdPartyInsurance.VinCar" placeholder="شماره VIN" class="form-control" />
                             <span asp-validation-for="DescriptionOfThirdPartyInsurance.VinCar" class="text-danger"></span>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="form-group">
-                            <label asp-for="DescriptionOfThirdPartyInsurance.CarEngineNumber" class="control-label"></label>
-                            <input asp-for="DescriptionOfThirdPartyInsurance.CarEngineNumber" class="form-control" />
+                            @* <label asp-for="DescriptionOfThirdPartyInsurance.CarEngineNumber" class="control-label"></label>*@
+                            <input asp-for="DescriptionOfThirdPartyInsurance.CarEngineNumber" placeholder="شماره موتور" class="form-control" />
                             <span asp-validation-for="DescriptionOfThirdPartyInsurance.CarEngineNumber" class="text-danger"></span>
                         </div>
                     </div>
 
                 </div>
+                <hr />
 
-
-
-                <div class="form-group col-md-2">
-                  @*  <label asp-for="DescriptionOfThirdPartyInsurance.CarColor" class="control-label"></label>*@
-                    <select asp-for="DescriptionOfThirdPartyInsurance.CarColor" class="form-control">
-                        <option disabled selected hidden>رنگ</option>
-                    </select>
-                    <span asp-validation-for="DescriptionOfThirdPartyInsurance.CarColor" class="text-danger"></span>
-                </div>
                 <div class="row">
                     <div class="col-md-4">
                         <div class="form-group">
-                          @*  <label asp-for="DescriptionOfThirdPartyInsurance.DriverDiscountPercentage" class="control-label"></label>*@
+                            @*  <label asp-for="DescriptionOfThirdPartyInsurance.DriverDiscountPercentage" class="control-label"></label>*@
                             <select asp-for="DescriptionOfThirdPartyInsurance.DriverDiscountPercentage" class="form-control">
                                 <option disabled selected hidden>درصد تخفیف راننده</option>
                                 <option>صفر درصد</option>
@@ -137,7 +147,7 @@
 
                     <div class="col-md-4">
                         <div class="form-group">
-                       @*     <label asp-for="DescriptionOfThirdPartyInsurance.PercentageOfInsuranceDiscount" class="control-label"></label>*@
+                            @*     <label asp-for="DescriptionOfThirdPartyInsurance.PercentageOfInsuranceDiscount" class="control-label"></label>*@
                             <select asp-for="DescriptionOfThirdPartyInsurance.PercentageOfInsuranceDiscount" class="form-control">
                                 <option disabled selected hidden> درصد تخفیف بیمه نامه</option>
                                 <option>صفر درصد</option>
@@ -158,11 +168,11 @@
                             </select>
                             <span asp-validation-for="DescriptionOfThirdPartyInsurance.PercentageOfInsuranceDiscount" class="text-danger"></span>
                         </div>
-                    </div> 
+                    </div>
 
                     <div class="col-md-4">
                         <div class="form-group">
-                        @*    <label asp-for="DescriptionOfThirdPartyInsurance.CarCapacity" class="control-label"></label>*@
+                            @*    <label asp-for="DescriptionOfThirdPartyInsurance.CarCapacity" class="control-label"></label>*@
                             <select asp-for="DescriptionOfThirdPartyInsurance.CarCapacity" class="form-control">
                                 <option disabled selected hidden> ظرفيت</option>
                                 <option>يک</option>
@@ -179,29 +189,36 @@
                         </div>
                     </div>
                 </div>
-              
-                
-                <div class="form-group col-md-2">
-                 @*   <label asp-for="DescriptionOfThirdPartyInsurance.UsedCar" class="control-label"></label>*@
-                    <select asp-for="DescriptionOfThirdPartyInsurance.UsedCar" class="form-control">
-                        <option disabled selected hidden> مورد استفاده</option>
-                        <option>شخصي</option>
-                        <option>تاکسي</option>
-                        <option>درون شهري</option>
-                        <option>برون شهري</option>
-                    </select>
-                    <span asp-validation-for="DescriptionOfThirdPartyInsurance.UsedCar" class="text-danger"></span>
+
+                <div class="row">
+
+                    <div class="form-group col-md-2">
+                        @*   <label asp-for="DescriptionOfThirdPartyInsurance.UsedCar" class="control-label"></label>*@
+                        <select asp-for="DescriptionOfThirdPartyInsurance.UsedCar" class="form-control">
+                            <option disabled selected hidden> مورد استفاده</option>
+                            <option>شخصي</option>
+                            <option>تاکسي</option>
+                            <option>درون شهري</option>
+                            <option>برون شهري</option>
+                        </select>
+                        <span asp-validation-for="DescriptionOfThirdPartyInsurance.UsedCar" class="text-danger"></span>
+                    </div>
+                    <div class="form-group form-check col-md-3">
+                        <label class="form-check-label">
+                            @Html.DisplayNameFor(model => model.DescriptionOfThirdPartyInsurance.TowTruckCar)   <input class="form-check-input" asp-for="DescriptionOfThirdPartyInsurance.TowTruckCar" />
+                        </label>
+                    </div>
                 </div>
+
+                <br />
                
 
-                <div class="form-group form-check">
-                    <label class="form-check-label">
-                        @Html.DisplayNameFor(model => model.DescriptionOfThirdPartyInsurance.TowTruckCar)  <input class="form-check-input" asp-for="DescriptionOfThirdPartyInsurance.TowTruckCar" />
-                    </label>
+                <div class="row">
+                    <div class="col-md-4"></div>
+                    <div class="form-group col-md-4"><input type="submit" value="ثبت" class="btn btn-block btn-success" /></div>
                 </div>
-                <div class="form-group">
-                    <input type="submit" value="ثبت" class="btn  btn-success" />
-                </div>
+
+
             </form>
         </div>
     </div>

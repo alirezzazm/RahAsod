@@ -1,0 +1,75 @@
+﻿@page
+@model RahAsod.Pages.CustomerRegistrationPages.RegisterModel
+
+@{
+    ViewData["Title"] = "Register";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+
+
+
+
+<div class="row">
+    <h4>ثبت نام</h4>
+    <br />
+    <div class="col-md-12">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="RegisterCustomer.FirstName" class="control-label"></label>
+                <input asp-for="RegisterCustomer.FirstName" class="form-control" />
+                <span asp-validation-for="RegisterCustomer.FirstName" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="RegisterCustomer.LastName" class="control-label"></label>
+                <input asp-for="RegisterCustomer.LastName" class="form-control" />
+                <span asp-validation-for="RegisterCustomer.LastName" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="RegisterCustomer.NationalCode" class="control-label"></label>
+                <input asp-for="RegisterCustomer.NationalCode" class="form-control" />
+                <span asp-validation-for="RegisterCustomer.NationalCode" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RegisterCustomer.PhoneNumber" class="control-label"></label>
+                <input asp-for="RegisterCustomer.PhoneNumber" class="form-control" />
+                <span asp-validation-for="RegisterCustomer.PhoneNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RegisterCustomer.HomeNumber" class="control-label"></label>
+                <input asp-for="RegisterCustomer.HomeNumber" class="form-control" />
+                <span asp-validation-for="RegisterCustomer.HomeNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RegisterCustomer.Email" class="control-label"></label>
+                <input asp-for="RegisterCustomer.Email" class="form-control" />
+                <span asp-validation-for="RegisterCustomer.Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RegisterCustomer.Adrress" class="control-label"></label>
+                <input asp-for="RegisterCustomer.Adrress" class="form-control" />
+                <span asp-validation-for="RegisterCustomer.Adrress" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RegisterCustomer.InsurancesForCustomer" class="control-label"></label>
+                <input asp-for="RegisterCustomer.InsurancesForCustomer" class="form-control" />
+                <span asp-validation-for="RegisterCustomer.InsurancesForCustomer" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
