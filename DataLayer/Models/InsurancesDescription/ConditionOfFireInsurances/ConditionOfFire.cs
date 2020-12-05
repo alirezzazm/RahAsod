@@ -3,18 +3,17 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Text;
 
-namespace DataLayer.Models.InsurancesDescription.ConditionOfCarBodyInsurances
+namespace DataLayer.Models.InsurancesDescription.ConditionOfFireInsurances
 {
-    //اضافه کردن شرط برای بیمه بدنه از طریق ادمین
-    public class ConditionOfCarBody
+   public class ConditionOfFire
     {
         [Key]
-        public int ConditionOfCarBodyInsurancesID { get; set; }
+        public int ConditionOfCarFireInsurancesID { get; set; }
         [Display(Name = "اسم شرط جدید را وارد کنید")]
         [Required(ErrorMessage = "لطفا {0} را وارد کنيد ")]
-        public string NameConditionBody { get; set; }
+        public string NameConditionFire { get; set; }
         [Display(Name = "درصد ضریب شرط را وارد کنید")]
         [Required(ErrorMessage = "لطفا {0} را وارد کنيد ")]
-        public float AdditionalPercentageBody { get; set; }
+        public float AdditionalPercentageFire { get; set; }
     }
 }
