@@ -12,6 +12,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Pages\Admin\Body\" />
+    <Folder Include="Pages\Admin\Fire\" />
+    <Folder Include="Pages\Admin\Life\" />
+    <Folder Include="Pages\Admin\Settinge\" />
+    <Folder Include="Pages\Admin\ThirdParty\" />
     <Folder Include="Pages\CustomerRegistrationPages\" />
   </ItemGroup>
 
