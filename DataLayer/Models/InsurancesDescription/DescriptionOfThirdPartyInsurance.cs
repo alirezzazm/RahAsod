@@ -64,6 +64,9 @@ namespace DataLayer.Models.InsurancesDescription
         [Required(ErrorMessage = "لطفا {0} را وارد کنيد ")]
         public bool TowTruckCar { get; set; }
 
+        public int FinancialCoverageOfCarThirdPartyInsurancesID { get; set; }
+
+
     }
 }
 

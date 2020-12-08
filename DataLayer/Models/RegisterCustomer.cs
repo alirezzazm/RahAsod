@@ -7,6 +7,7 @@ namespace DataLayer.Models
 {
     public class RegisterCustomer
     {
+        //ثبت نام و دریافت اطلاعات مشتری
         [Key]
         public int CustomerID { get; set; }
 
