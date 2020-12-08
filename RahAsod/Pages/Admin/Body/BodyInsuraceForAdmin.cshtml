@@ -1,5 +1,5 @@
 ﻿@page
-@model RahAsod.Pages.Admin.FirstPageAdminModel
+@model RahAsod.Pages.Admin.Body.BodyInsuraceForAdminModel
 @{
 
 
@@ -15,7 +15,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Blank</title>
+    <title>اطلاعات بیمه بدنه مشتری های صادر نشده</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -64,13 +64,13 @@
             <!-- Nav Item - Pages بیمه های در خواستی -->
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
-                   aria-expanded="false" aria-controls="collapseTwo">
+                   aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fas fa-fw fa-cog"></i>
                     <span>بیمه های درخواستی </span>
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" asp-area="" asp-page="/Admin/Body/BodyInsuraceForAdmin"> بدنه</a>
+                        <a class="collapse-item"> بدنه</a>
                         <a class="collapse-item" href="buttons.html"> شخص ثالث</a>
                         <a class="collapse-item" href="cards.html">حریق</a>
                         <a class="collapse-item" href="cards.html">عمر</a>
@@ -104,7 +104,7 @@
             </div>-->
             <!-- Nav Item - تنظیمات بیمه Collapse Menu -->
             <li class="nav-item active">
-                <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true"
+                <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="false"
                    aria-controls="collapsePages">
                     <i class="fas fa-fw fa-folder"></i>
                     <span>تنظیمات و ضرایب بیمه ها</span>

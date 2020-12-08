@@ -6,17 +6,28 @@
 
   <ItemGroup>
     <Compile Remove="Model\**" />
+    <Compile Remove="Pages\Admin\Fire\**" />
+    <Compile Remove="Pages\Admin\Life\**" />
+    <Compile Remove="Pages\Admin\Settinge\**" />
+    <Compile Remove="Pages\Admin\ThirdParty\**" />
     <Content Remove="Model\**" />
+    <Content Remove="Pages\Admin\Fire\**" />
+    <Content Remove="Pages\Admin\Life\**" />
+    <Content Remove="Pages\Admin\Settinge\**" />
+    <Content Remove="Pages\Admin\ThirdParty\**" />
     <EmbeddedResource Remove="Model\**" />
+    <EmbeddedResource Remove="Pages\Admin\Fire\**" />
+    <EmbeddedResource Remove="Pages\Admin\Life\**" />
+    <EmbeddedResource Remove="Pages\Admin\Settinge\**" />
+    <EmbeddedResource Remove="Pages\Admin\ThirdParty\**" />
     <None Remove="Model\**" />
+    <None Remove="Pages\Admin\Fire\**" />
+    <None Remove="Pages\Admin\Life\**" />
+    <None Remove="Pages\Admin\Settinge\**" />
+    <None Remove="Pages\Admin\ThirdParty\**" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Pages\Admin\Body\" />
-    <Folder Include="Pages\Admin\Fire\" />
-    <Folder Include="Pages\Admin\Life\" />
-    <Folder Include="Pages\Admin\Settinge\" />
-    <Folder Include="Pages\Admin\ThirdParty\" />
     <Folder Include="Pages\CustomerRegistrationPages\" />
   </ItemGroup>
 
