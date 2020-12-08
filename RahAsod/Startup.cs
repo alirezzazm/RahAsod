@@ -34,7 +34,7 @@ namespace RahAsod
             services.AddRazorPages()
             .AddRazorPagesOptions(options =>
              {
-                 options.Conventions.AddPageRoute("/Admin/FirstPageAdmin", "");
+                 options.Conventions.AddPageRoute("/MainPage/HomePage", "");
              });
         }
 
