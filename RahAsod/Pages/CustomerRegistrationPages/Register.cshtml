@@ -3,73 +3,118 @@
 
 @{
     ViewData["Title"] = "Register";
-    Layout = "~/Pages/Shared/_Layout.cshtml";
+    Layout = "_LayoutForCustomerRegister";
 }
 
+<div class="card o-hidden border-0 shadow-lg my-5">
+    <div class="card-body p-0">
+        <!-- Nested Row within Card Body -->
+        <div class="row">
+
+            <div class="col-lg-12">
+                <div class="p-5">
+                    <div class="text-center">
+                        <h1 class="h4 text-gray-900 mb-4">ثبت نام</h1>
+                    </div>
+                    <form class="user" method="post">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+
+                        <div class="form-group row">
+                            <div class="col-sm-6 mb-3 mb-sm-0">
+                                <input type="text" class="form-control form-control-user text-center" id="exampleFirstName" placeholder="نام" asp-for="RegisterCustomer.FirstName" />
+                                <span asp-validation-for="RegisterCustomer.FirstName" class="text-danger"></span>
+                            </div>
+                            <div class="col-sm-6">
+                                <input type="text" class="form-control form-control-user text-center" id="exampleLastName" placeholder="نام خانوادگی" asp-for="RegisterCustomer.LastName" />
+                                <span asp-validation-for="RegisterCustomer.LastName" class="text-danger"></span>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group row">
+                            <div class="col-sm-4 mb-3 mb-sm-0">
+                                <input type="number" class="form-control form-control-user text-center" id="exampleFirstName" placeholder="کد ملی" asp-for="RegisterCustomer.NationalCode" />
+                                <span asp-validation-for="RegisterCustomer.NationalCode" class="text-danger"></span>
+                            </div>
+                            <div class="col-sm-4">
+                                <input type="number" class="form-control form-control-user text-center" id="exampleLastName" placeholder="شماره همراه" asp-for="RegisterCustomer.PhoneNumber" />
+                                <span asp-validation-for="RegisterCustomer.PhoneNumber" class="text-danger"></span>
+
+                            </div>
+                            <div class="col-sm-4">
+                                <input type="number" class="form-control form-control-user text-center" id="exampleLastName" placeholder="شماره منزل" asp-for="RegisterCustomer.HomeNumber" />
+                                <span asp-validation-for="RegisterCustomer.HomeNumber" class="text-danger"></span>
+
+                            </div>
+                        </div>
+
+
+
+                        <div class="form-group">
+                            <input type="email" class="form-control form-control-user text-center" id="exampleInputEmail" placeholder="ایمیل" asp-for="RegisterCustomer.Email" />
+                            <span asp-validation-for="RegisterCustomer.Email" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control form-control-user text-center" id="exampleInputEmail" placeholder="آدرس منزل" asp-for="RegisterCustomer.Adrress" />
+                            <span asp-validation-for="RegisterCustomer.Adrress" class="text-danger"></span>
+                        </div>
 
 
 
 
-<div class="row">
-    <h4>ثبت نام</h4>
-    <br />
-    <div class="col-md-12">
-        <form method="post">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="form-group row">
+                            <div class="col-sm-6 mb-3 mb-sm-0">
+                                <input type="password" class="form-control form-control-user text-center" id="exampleInputPassword" placeholder="رمز" asp-for="RegisterCustomer.Password" />
+                                <span asp-validation-for="RegisterCustomer.Password" class="text-danger"></span>
+                            </div>
+                            <div class="col-sm-6">
+                                <input type="password" class="form-control form-control-user text-center" id="exampleRepeatPassword" placeholder="تکرار رمز" asp-for="RegisterCustomer.RepeatPassword" />
+                                <span asp-validation-for="RegisterCustomer.RepeatPassword" class="text-danger"></span>
+                            </div>
+                        </div>
 
-            <div class="form-group">
-                <label asp-for="RegisterCustomer.FirstName" class="control-label"></label>
-                <input asp-for="RegisterCustomer.FirstName" class="form-control" />
-                <span asp-validation-for="RegisterCustomer.FirstName" class="text-danger"></span>
-            </div>
 
-            <div class="form-group">
-                <label asp-for="RegisterCustomer.LastName" class="control-label"></label>
-                <input asp-for="RegisterCustomer.LastName" class="form-control" />
-                <span asp-validation-for="RegisterCustomer.LastName" class="text-danger"></span>
-            </div>
 
-            <div class="form-group">
-                <label asp-for="RegisterCustomer.NationalCode" class="control-label"></label>
-                <input asp-for="RegisterCustomer.NationalCode" class="form-control" />
-                <span asp-validation-for="RegisterCustomer.NationalCode" class="text-danger"></span>
+                        <a asp-area="" asp-page="/MainPage/HomePage" class="btn btn-user btn-block" style="background-color:#67B0D1CC;text-decoration-color:white;" value="Create">
+                            ثبت نام
+                        </a>
+                        <hr>
+
+
+                        <a href="index.html" class="btn btn-google btn-user btn-block">
+                            <i class="fab fa-google fa-fw"></i> ثبت نام با گوگل
+                        </a>
+                        <a href="index.html" class="btn btn-facebook btn-user btn-block">
+                            <i class="fab fa-facebook-f fa-fw"></i> ثبت نام با فیسبوک
+                        </a>
+                    </form>
+                    <hr>
+                    <div class="text-center">
+                        <a class="small" href="forgot-password.html">
+                            رمز عبور خود را فراموش کرده اید؟
+                        </a>
+                    </div>
+                    <div class="text-center">
+                        <a class="small" href="login.html">قبلاً حساب دارید؟ وارد شوید!</a>
+                    </div>
+                    <div class="text-center">
+                        <a asp-page="/MainPage/HomePage">برگشت به صفحه اول</a>
+                    </div>
+                    @section Scripts {
+                        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+                    }
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="RegisterCustomer.PhoneNumber" class="control-label"></label>
-                <input asp-for="RegisterCustomer.PhoneNumber" class="form-control" />
-                <span asp-validation-for="RegisterCustomer.PhoneNumber" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="RegisterCustomer.HomeNumber" class="control-label"></label>
-                <input asp-for="RegisterCustomer.HomeNumber" class="form-control" />
-                <span asp-validation-for="RegisterCustomer.HomeNumber" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="RegisterCustomer.Email" class="control-label"></label>
-                <input asp-for="RegisterCustomer.Email" class="form-control" />
-                <span asp-validation-for="RegisterCustomer.Email" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="RegisterCustomer.Adrress" class="control-label"></label>
-                <input asp-for="RegisterCustomer.Adrress" class="form-control" />
-                <span asp-validation-for="RegisterCustomer.Adrress" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="RegisterCustomer.InsurancesForCustomer" class="control-label"></label>
-                <input asp-for="RegisterCustomer.InsurancesForCustomer" class="form-control" />
-                <span asp-validation-for="RegisterCustomer.InsurancesForCustomer" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
+        </div>
     </div>
+
 </div>
 
-<div>
-    <a asp-page="Index">Back to List</a>
-</div>
 
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}
+
+
+
+
+
+
