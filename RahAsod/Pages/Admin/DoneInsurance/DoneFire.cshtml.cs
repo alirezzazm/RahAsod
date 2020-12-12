@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace RahAsod.Pages.Admin.Body
+namespace RahAsod.Pages.Admin.DoneInsurance
 {
-    public class BodyInsuraceForAdminModel : PageModel
+    public class DoneFireModel : PageModel
     {
         public void OnGet()
         {
