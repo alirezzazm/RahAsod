@@ -34,7 +34,7 @@ namespace RahAsod
             services.AddRazorPages()
             .AddRazorPagesOptions(options =>
              {
-                 options.Conventions.AddPageRoute("/CustomerRegistrationPages/Register", "");
+                 options.Conventions.AddPageRoute("/MainPage/HomePage", "");
              });
         }
 
