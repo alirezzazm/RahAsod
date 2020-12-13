@@ -34,7 +34,7 @@ namespace RahAsod
             services.AddRazorPages()
             .AddRazorPagesOptions(options =>
              {
-                 options.Conventions.AddPageRoute("/CustomerRegistrationPages/ForgotPasswordCustomerPage", "");
+                 options.Conventions.AddPageRoute("/MainPage/HomePage", "");
              });
         }
 
