@@ -10,9 +10,11 @@
 
             <div class="row">
                 <div class="col-sm-12">
-                    <table class="table table-bordered dataTable table-striped" id="dataTable" width="100%" cellspacing="0" role="grid" aria-describedby="dataTable_info" style="width: 100%;">
+                    <table class="table table-bordered dataTable table-striped" id="dataTable" width="100%"
+                           cellspacing="0" role="grid" aria-describedby="dataTable_info" style="width: 100%;">
                         <thead>
                             <tr role="row">
+                                <th style="width: 10px;"></th>
                                 <th class="sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 77px;">تعداد سیلند</th>
                                 <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 117px;">مالی 11 و حداقل</th>
                                 <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 56px;">مالی 22</th>
@@ -26,39 +28,38 @@
 
 
                             <tr role="row" class="odd">
+                                <td>
+                                    <!-- Default unchecked -->
+                                    <div class="custom-control custom-radio">
+                                        <input type="radio" class="custom-control-input" id="defaultUnchecked" name="defaultExampleRadios">
+                                        <label class="custom-control-label" for="defaultUnchecked"></label>
+                                    </div>
+                                </td>
                                 <td class="sorting_1">ماشین های 3 سیلندر و پراید </td>
-                                <td>Accountant</td>
-                                <td>Tokyo</td>
-                                <td>33</td>
-                                <td>2008/11/28</td>
-                                <td>$162,700</td>
+                                <td>20/080/000</td>
+                                <td>%</td>
+                                <td>%</td>
+                                <td>%</td>
+                                <td>%</td>
                             </tr>
                             <tr role="row" class="even">
+                                <td>
+                                    <!-- Default checked -->
+                                    <div class="custom-control custom-radio">
+                                        <input type="radio" class="custom-control-input" id="defaultChecked" name="defaultExampleRadios" checked>
+                                        <label class="custom-control-label" for="defaultChecked"></label>
+                                    </div>
+                                </td>
                                 <td class="sorting_1">ماشین های 4 سیلندر تیبا ،سمند ،پژو</td>
-                                <td>Chief Executive Officer (CEO)</td>
-                                <td>London</td>
-                                <td>47</td>
-                                <td>2009/10/09</td>
-                                <td>$1,200,000</td>
+                                <td>24/000/000</td>
+                                <td>%</td>
+                                <td>%</td>
+                                <td>%</td>
+                                <td>%</td>
                             </tr>
 
 
-                            <tr role="row" class="odd">
-                                <td class="sorting_1">ماشین های 6 سیلندر</td>
-                                <td>Accountant</td>
-                                <td>Tokyo</td>
-                                <td>33</td>
-                                <td>2008/11/28</td>
-                                <td>$162,700</td>
-                            </tr>
-                            <tr role="row" class="even">
-                                <td class="sorting_1">ماشین های بارکش با وزن 1 کیلو</td>
-                                <td>Chief Executive Officer (CEO)</td>
-                                <td>London</td>
-                                <td>47</td>
-                                <td>2009/10/09</td>
-                                <td>$1,200,000</td>
-                            </tr>
+
 
 
                         </tbody>
@@ -71,25 +72,61 @@
                     <div class="row justify-content-md-center">
                         <div class="col col-lg-2">
                             <a href="#" class="btn btn-info btn-icon-split">
-                                <span class="text">ویرایش</span>
+                                <!-- Button to Open the Modal -->
+                                <span class="text" data-toggle="modal" data-target="#myModal">ویرایش</span>
+
                             </a>
                         </div>
                         <div class="col-md-2">
                             <a href="#" class="btn btn-danger btn-icon-split">
-                                <span class="text">حذف</span>
+                                <!-- Button to Open the Modal -->
+                                <span class="text" data-toggle="modal" data-target="#myModal">حذف</span>
                             </a>
                         </div>
                         <div class="col col-lg-2">
                             <a href="#" class="btn btn-success btn-icon-split">
-                                <span class="text">اضافه کردن</span>
+                                <!-- Button to Open the Modal -->
+                                <span class="text" data-toggle="modal" data-target="#myModal">اضافه کردن</span>
                             </a>
                         </div>
 
                     </div>
-                 
+
                 </div>
 
-            
+
             </div>
+
+            <!-- The Modal -->
+            <div class="container">
+
+
+
+                <div class="modal" id="myModal">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+
+                            <!-- Modal Header -->
+                            <div class="modal-header">
+                                <h4 class="modal-title">Modal Heading</h4>
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+
+                            <!-- Modal body -->
+                            <div class="modal-body">
+                                Modal body..
+                            </div>
+
+                            <!-- Modal footer -->
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
     </div>
-</div>
