@@ -34,7 +34,7 @@ namespace RahAsod
             services.AddRazorPages()
             .AddRazorPagesOptions(options =>
              {
-                 options.Conventions.AddPageRoute("/Admin/SettingsAndCoefficientsInsurance/SettingsAndCoefficientsThirdParty", "");
+                 options.Conventions.AddPageRoute("/Admin/RequestedInsurance/RequestedThirdParty", "");
              });
         }
 
