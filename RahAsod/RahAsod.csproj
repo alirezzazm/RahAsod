@@ -28,16 +28,19 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="wwwroot\img\.DS_Store" />
     <None Include="wwwroot\img\undraw_posting_photo.svg" />
     <None Include="wwwroot\img\undraw_profile.svg" />
     <None Include="wwwroot\img\undraw_profile_1.svg" />
     <None Include="wwwroot\img\undraw_profile_2.svg" />
     <None Include="wwwroot\img\undraw_profile_3.svg" />
     <None Include="wwwroot\img\undraw_rocket.svg" />
+    <None Include="wwwroot\js\classie.js" />
     <None Include="wwwroot\js\demo\chart-area-demo.js" />
     <None Include="wwwroot\js\demo\chart-bar-demo.js" />
     <None Include="wwwroot\js\demo\chart-pie-demo.js" />
     <None Include="wwwroot\js\demo\datatables-demo.js" />
+    <None Include="wwwroot\js\dynamics.min.js" />
     <None Include="wwwroot\js\main.js" />
     <None Include="wwwroot\js\sb-admin-2.js" />
     <None Include="wwwroot\js\sb-admin-2.min.js" />
