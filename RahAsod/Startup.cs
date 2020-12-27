@@ -34,7 +34,7 @@ namespace RahAsod
             services.AddRazorPages()
             .AddRazorPagesOptions(options =>
              {
-                 options.Conventions.AddPageRoute("/TypesOfInsurancePages/Issued/CarThirdPartyIssued", "");
+                 options.Conventions.AddPageRoute("/PanelCustomer/FirstPanelCustomerPage", "");
              });
         }
 
