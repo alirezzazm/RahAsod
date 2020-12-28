@@ -52,41 +52,41 @@
 
                 <!-- Sidebar - Brand -->
                 @*<a class="container-fluid sidebar-brand d-flex align-items-center justify-content-center" asp-area="" asp-page="/MainPage/HomePage">
-            <div class="sidebar-brand-icon rotate-n-15">
-                <img src="../img/bg-masthead.png" class=" fas col-xl-8 col-lg-7" style="width:120px;height:120px;" />
-            </div>
+                        <div class="sidebar-brand-icon rotate-n-15">
+                            <img src="../img/bg-masthead.png" class=" fas col-xl-8 col-lg-7" style="width:120px;height:120px;" />
+                        </div>
 
 
-        </a>*@
+                    </a>*@
 
                 <!-- Divider -->
                 <!--<hr class="sidebar-divider my-0">-->
                 <!-- Nav Item - Dashboard -->
                 <!--<li class="nav-item">
-        <a class="nav-link" href="index.html">
-            <i class="fas fa-fw fa-tachometer-alt"></i>
-            <span>Dashboard</span>
-        </a>
-    </li>-->
+                    <a class="nav-link" href="index.html">
+                        <i class="fas fa-fw fa-tachometer-alt"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>-->
                 <!-- Divider -->
                 @*<hr class="sidebar-divider">*@
 
                 <!-- Heading -->
                 @*<div class="sidebar-heading">
-            Interface
-        </div>*@
+                        Interface
+                    </div>*@
 
                 <!-- Nav Item - Pages بیمه های صادر شده -->
                 <li class="nav-item active">
-                    <a class="nav-link" asp-page="/Admin/SiteFrontPageSettings/SiteFirstSliderSetting" asp-area="">
-                       
+                    <a class="nav-link" asp-page="/PanelCustomer/FirstPanelCustomerPage" asp-area="">
+
                         <span>بیمه ها</span>
                     </a>
                 </li>
                 <!-- Nav Item - Pages پرداخت ها -->
                 <li class="nav-item active">
-                    <a class="nav-link" asp-page="/Admin/SiteFrontPageSettings/SiteFirstSliderSetting" asp-area="">
-                      
+                    <a class="nav-link" asp-page="/PanelCustomer/PaymentsPanelCustomerPage" asp-area="">
+
                         <span>پرداخت ها</span>
                     </a>
                 </li>
@@ -95,45 +95,43 @@
 
                 <!-- Heading -->
                 <!--<div class="sidebar-heading">
-        Addons
-    </div>-->
+                    Addons
+                </div>-->
                 <!-- Nav Item - اطلاعات شخص Collapse Menu -->
                 <li class="nav-item active">
-                    <a class="nav-link" asp-page="/Admin/SiteFrontPageSettings/SiteFirstSliderSetting" asp-area="">
-                   
+                    <a class="nav-link" asp-page="/PanelCustomer/PersonalInformationPanelCustomerPage" asp-area="">
+
                         <span> اطلاعات شخص</span>
                     </a>
                 </li>
 
                 <!-- Nav Item - شخصی سازی صفحه Collapse Menu -->
                 <li class="nav-item active">
-                    <a class="nav-link" asp-page="/Admin/SiteFrontPageSettings/SiteFirstSliderSetting" asp-area="">
-                  
+                    <a class="nav-link" asp-page="/PanelCustomer/PersonalizationPanelCustomerPage" asp-area="">
+
                         <span>شخصی سازی صفحه</span>
                     </a>
                 </li>
 
 
-          
+
                 <!-- Nav Item - Charts -->
                 <!--<li class="nav-item">
-        <a class="nav-link" href="charts.html">
-            <i class="fas fa-fw fa-chart-area"></i>
-            <span>Charts</span>
-        </a>
-    </li>-->
+                    <a class="nav-link" href="charts.html">
+                        <i class="fas fa-fw fa-chart-area"></i>
+                        <span>Charts</span>
+                    </a>
+                </li>-->
                 <!-- Nav Item - Tables -->
                 <!--<li class="nav-item">
-        <a class="nav-link" href="tables.html">
-            <i class="fas fa-fw fa-table"></i>
-            <span>Tables</span>
-        </a>
-    </li>-->
+                    <a class="nav-link" href="tables.html">
+                        <i class="fas fa-fw fa-table"></i>
+                        <span>Tables</span>
+                    </a>
+                </li>-->
                 <!-- Divider -->
-            
-
                 <!-- Sidebar Toggler (Sidebar) -->
-           
+
 
             </ul>
             <!-- End of Sidebar -->
@@ -156,7 +154,7 @@
                         <!-- Topbar Navbar -->
                         <ul class="navbar-nav ml-auto">
 
-                    
+
 
                             <!-- Nav Item - Alerts -->
                             <li class="nav-item dropdown no-arrow mx-1">
@@ -209,9 +207,9 @@
                                 </div>
                             </li>
 
-                          
 
-             
+
+
 
                             <!-- Nav Item - User Information -->
                             <li class="nav-item dropdown no-arrow">
@@ -318,6 +316,7 @@
             var slideshow = new CircleSlideshow(document.getElementById('slideshow'));
         })();
     </script>
+    @RenderSection("Scripts", required: false)
 
 </body>
 </html>

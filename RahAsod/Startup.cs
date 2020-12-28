@@ -34,7 +34,7 @@ namespace RahAsod
             services.AddRazorPages()
             .AddRazorPagesOptions(options =>
              {
-                 options.Conventions.AddPageRoute("/PanelCustomer/FirstPanelCustomerPage", "");
+                 options.Conventions.AddPageRoute("/PanelCustomer/PersonalInformationPanelCustomerPage", "");
              });
         }
 
