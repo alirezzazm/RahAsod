@@ -34,7 +34,7 @@ namespace RahAsod
             services.AddRazorPages()
             .AddRazorPagesOptions(options =>
              {
-                 options.Conventions.AddPageRoute("/Admin/RequestedInsurance/RequestedThirdParty", "");
+                 options.Conventions.AddPageRoute("/Admin/SiteFrontPageSettings/SiteFirstSliderSetting", "");
              });
         }
 
