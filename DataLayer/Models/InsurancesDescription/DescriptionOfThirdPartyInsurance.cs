@@ -12,7 +12,7 @@ namespace DataLayer.Models.InsurancesDescription
         [Key]
         public int ThirdPartyID { get; set; }
 
-        [Display(Name = "خودرو")]
+        [Display(Name = " پلاک خودرو")]
         [Required(ErrorMessage = "لطفا {0} را وارد کنيد ")]
         public string CarTag { get; set; }
 
