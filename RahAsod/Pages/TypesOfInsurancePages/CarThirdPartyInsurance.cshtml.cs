@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using DataLayer.Context;
-using DataLayer.Models.InsurancesDescription;
+using DataLayer.Models;
 
 namespace RahAsod.Pages.TypesOfInsurancePages
 {

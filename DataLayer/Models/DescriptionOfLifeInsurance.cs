@@ -3,31 +3,37 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Text;
 
-namespace DataLayer.Models.InsurancesDescription
+namespace DataLayer.Models
 {
     public class DescriptionOfLifeInsurance
     {
         //شرح بیمه نامه عمر
         [Key]
         public int LifeID { get; set; }
+
         [Display(Name = "تاریخ تولد مشتری")]
         [Required(ErrorMessage = "لطفا {0} را وارد کنيد ")]
-        public DateTime DateOfBirthCustomer { get; set; }
+        public string CustomerBirthday { get; set; }
+
         [Display(Name = "شغل")]
         [Required(ErrorMessage = "لطفا {0} را وارد کنيد ")]
-        public string TitleJobCustomer { get; set; }
+        public string CustomerJob { get; set; }
+
         [Display(Name = "نحوه پرداخت")]
         [Required(ErrorMessage = "لطفا {0} را وارد کنيد ")]
-        public string HowToPayInsuranceOfCustomer { get; set; }
+        public string PaymentMethod { get; set; }
+
         [Display(Name = "مدت بیمه نامه")]
         [Required(ErrorMessage = "لطفا {0} را وارد کنيد ")]
-        public int TermOfCustomerInsurance { get; set; }
-        [Display(Name = "قیمت خودرو")]
+        public int CustomerTermOfInsurance { get; set; }
+
+        [Display(Name = "حداقل مبلغ واریزی")]
         [Required(ErrorMessage = "لطفا {0} را وارد کنيد ")]
-        public float MinimumDepositMoneyCustomer { get; set; }
+        public float MinimumDepositMoney { get; set; }
+
         [Display(Name = "ایا بیمه نامه عمر قبلی دارید؟")]
         [Required(ErrorMessage = "لطفا {0} را وارد کنيد ")]
-        public bool DoYouHaveAPreviousLifeInsurancePolicy { get; set; }
+        public bool HavePreviousLifeInsurance { get; set; }
 
     }
 }

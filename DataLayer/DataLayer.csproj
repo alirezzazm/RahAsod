@@ -13,4 +13,10 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Models\InsurancesDescription\ConditionOfCarBodyInsurances\" />
+    <Folder Include="Models\InsurancesDescription\ConditionOfFireInsurances\" />
+    <Folder Include="Models\InsurancesDescription\FinancialCoverageOfCarThirdPartyInsurances\" />
+  </ItemGroup>
+
 </Project>

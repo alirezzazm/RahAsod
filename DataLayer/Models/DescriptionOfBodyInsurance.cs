@@ -3,16 +3,19 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Text;
 
-namespace DataLayer.Models.InsurancesDescription
+namespace DataLayer.Models
 {
-
-    //شرح بیمه های شخص ثالث مشتری
-    public class DescriptionOfThirdPartyInsurance
+    //شرح بیمه نامه بدنه مشتری
+    public class DescriptionOfBodyInsurance
     {
         [Key]
-        public int ThirdPartyID { get; set; }
+        public int BodyID { get; set; }
 
-        [Display(Name = " پلاک خودرو")]
+        [Display(Name = "قیمت خودرو")]
+        [Required(ErrorMessage = "لطفا {0} را وارد کنيد ")]
+        public float CarPrice { get; set; }
+
+        [Display(Name = "خودرو")]
         [Required(ErrorMessage = "لطفا {0} را وارد کنيد ")]
         public string CarTag { get; set; }
 
@@ -44,11 +47,7 @@ namespace DataLayer.Models.InsurancesDescription
         [Required(ErrorMessage = "لطفا {0} را وارد کنيد ")]
         public string VinCar { get; set; }
 
-        [Display(Name = "درصد تخفيف راننده")]
-        [Required(ErrorMessage = "لطفا {0} را وارد کنيد ")]
-        public string DriverDiscountPercentage { get; set; }
-
-        [Display(Name = "درصد تخفيف بيمه نامه")]
+        [Display(Name = "درصد تخفيف بيمه نامه قبلی خودرو")]
         [Required(ErrorMessage = "لطفا {0} را وارد کنيد ")]
         public string PercentageOfInsuranceDiscount { get; set; }
 
@@ -62,13 +61,9 @@ namespace DataLayer.Models.InsurancesDescription
 
         [Display(Name = "يدک کش دارد")]
         [Required(ErrorMessage = "لطفا {0} را وارد کنيد ")]
-        public bool TowTruckCar { get; set; }
+        public bool HaveTowTruckCar { get; set; }
 
-        public int FinancialCoverageOfCarThirdPartyInsurancesID { get; set; }
-
+        public int ConditionOfCarBodyInsurancesID { get; set; }
 
     }
 }
-
-
-

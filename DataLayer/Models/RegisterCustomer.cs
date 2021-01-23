@@ -41,17 +41,17 @@ namespace DataLayer.Models
         [Required(ErrorMessage = "لطفا {0} را وارد کنيد ")]
         public string Adrress { get; set; }
 
-        [Display(Name = "پسوورد")]
+        [Display(Name = "رمز عبور")]
         [Required(ErrorMessage = "لطفا {0} را وارد کنيد ")]
         public int Password { get; set; }
 
-        [Display(Name = "تکرار پسوورد")]
+        [Display(Name = "تکرار رمز عبور")]
         [Required(ErrorMessage = "لطفا {0} را وارد کنيد ")]
-        public int RepeatPassword { get; set; }
+        public int ConfirmPassword { get; set; }
 
-        [Display(Name = "")]
-        [Required(ErrorMessage = "لطفا {0} را وارد کنيد ")]
-        public string InsurancesForCustomer { get; set; }
+        //[Display(Name = "")]
+        //[Required(ErrorMessage = "لطفا {0} را وارد کنيد ")]
+        //public string InsurancesForCustomer { get; set; }
 
         //[Display(Name = "نام ")]
         //[Required(ErrorMessage = "لطفا {0} را وارد کنيد ")]

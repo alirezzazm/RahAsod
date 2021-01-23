@@ -1,5 +1,5 @@
 ﻿using DataLayer.Models;
-using DataLayer.Models.InsurancesDescription;
+
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;

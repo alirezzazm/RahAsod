@@ -5,16 +5,16 @@ using System.Text;
 
 namespace DataLayer.Models
 {
-   public class LoginCustomer
+   public class ConditionOfFire
     {
-        //لاگین کردن مشتری
         [Key]
-        [Display(Name = "کدملی ")]
+        public int CarFireInsuranceID { get; set; }
+        [Display(Name = "نام شرط جدید")]
         [Required(ErrorMessage = "لطفا {0} را وارد کنيد ")]
-        public int NationalCode { get; set; }
+        public string ConditionNewName { get; set; }
 
-        [Display(Name = "رمز عبور ")]
+        [Display(Name = "درصد ضریب شرط")]
         [Required(ErrorMessage = "لطفا {0} را وارد کنيد ")]
-        public string Password { get; set; }
+        public float FireConditionCoefficientPercentage { get; set; }
     }
 }

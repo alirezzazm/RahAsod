@@ -3,19 +3,16 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Text;
 
-namespace DataLayer.Models.InsurancesDescription
+namespace DataLayer.Models
 {
-    //شرح بیمه نامه بدنه مشتری
-    public class DescriptionOfBodyInsurance
+
+    //شرح بیمه های شخص ثالث مشتری
+    public class DescriptionOfThirdPartyInsurance
     {
         [Key]
-        public int BodyID { get; set; }
+        public int ThirdPartyID { get; set; }
 
-        [Display(Name = "قیمت خودرو")]
-        [Required(ErrorMessage = "لطفا {0} را وارد کنيد ")]
-        public float CarPrice { get; set; }
-
-        [Display(Name = "خودرو")]
+        [Display(Name = " پلاک خودرو")]
         [Required(ErrorMessage = "لطفا {0} را وارد کنيد ")]
         public string CarTag { get; set; }
 
@@ -25,11 +22,11 @@ namespace DataLayer.Models.InsurancesDescription
 
         [Display(Name = "نوع خودرو")]
         [Required(ErrorMessage = "لطفا {0} را وارد کنيد ")]
-        public string TypeOfCar { get; set; }
+        public string CarType { get; set; }
 
         [Display(Name = "تيپ خودرو")]
         [Required(ErrorMessage = "لطفا {0} را وارد کنيد ")]
-        public string StyleCar { get; set; }
+        public string CarBrigade { get; set; }
 
         [Display(Name = "شماره شاسي")]
         [Required(ErrorMessage = "لطفا {0} را وارد کنيد ")]
@@ -45,25 +42,33 @@ namespace DataLayer.Models.InsurancesDescription
 
         [Display(Name = "VIN خودرو")]
         [Required(ErrorMessage = "لطفا {0} را وارد کنيد ")]
-        public string VinCar { get; set; }
+        public string CarVin { get; set; }
 
-        [Display(Name = "درصد تخفيف بيمه نامه قبلی خودرو")]
+        [Display(Name = "درصد تخفيف راننده")]
         [Required(ErrorMessage = "لطفا {0} را وارد کنيد ")]
-        public string PercentageOfInsuranceDiscount { get; set; }
+        public string DriverDiscountPercentage { get; set; }
+
+        [Display(Name = "درصد تخفيف بيمه نامه")]
+        [Required(ErrorMessage = "لطفا {0} را وارد کنيد ")]
+        public string PolicyDicountPercantage { get; set; }
 
         [Display(Name = "مورد استفاده ")]
         [Required(ErrorMessage = "لطفا {0} را وارد کنيد ")]
-        public string UsedCar { get; set; }
+        public string CarUsage { get; set; }
 
         [Display(Name = "ظرفيت ماشين")]
         [Required(ErrorMessage = "لطفا {0} را وارد کنيد ")]
         public string CarCapacity { get; set; }
 
-        [Display(Name = "يدک کش دارد یا خیر")]
+        [Display(Name = "يدک کش دارد")]
         [Required(ErrorMessage = "لطفا {0} را وارد کنيد ")]
         public bool TowTruckCar { get; set; }
 
-        public int ConditionOfCarBodyInsurancesID { get; set; }
+        public int CarThirdPartyInsuranceFinancialCoverageID { get; set; }
+
 
     }
 }
+
+
+
