@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Text;
 
-namespace DataLayer.Models
+namespace DataLayer.Models.Descriptions
 {
    public class DescriptionOfFireInsurance
     {
@@ -46,7 +46,7 @@ namespace DataLayer.Models
         [Required(ErrorMessage = "لطفا {0} را وارد کنيد ")]
         public float HomeFurnitureCapital { get; set; }
 
-        public int ConditionOfCarFireInsurancesID { get; set; }
+        public int CarFireInsuranceID { get; set; }
 
     }
 

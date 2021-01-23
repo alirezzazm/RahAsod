@@ -2,7 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using DataLayer.Context;
 using DataLayer.Models;
+using DataLayer.Models.Descriptions;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
@@ -10,11 +12,13 @@ namespace RahAsod.Pages.TypesOfInsurancePages.Issued
 {
     public class CarThirdPartyIssuedModel : PageModel
     {
-        private readonly DataLayer.Context.InsuranceContext _context;
-        //public CarThirdPartyInsuranceModel(DataLayer.Context.InsuranceContext context)
-        //{
-        //    _context = context;
-        //}
+        private InsuranceContext _context;
+
+        public CarThirdPartyIssuedModel(InsuranceContext context)
+        {
+            _context = context;
+        }
+       
         public IActionResult OnGet()
         {
             return Page();

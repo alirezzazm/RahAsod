@@ -5,7 +5,7 @@ using System.Text;
 
 namespace DataLayer.Models
 {
-   public class LoginCustomer
+   public class CustomerLogin
     {
         //لاگین کردن مشتری
         [Key]

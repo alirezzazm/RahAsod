@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Text;
 
-namespace DataLayer.Models
+namespace DataLayer.Models.Conditions
 {
     //اضافه کردن شرط برای بیمه بدنه از طریق ادمین
     public class ConditionOfCarBody

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Text;
 
-namespace DataLayer.Models
+namespace DataLayer.Models.Conditions
 {
    public class ConditionOfFire
     {

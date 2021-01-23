@@ -3,16 +3,19 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Text;
 
-namespace DataLayer.Models
+namespace DataLayer.Models.Descriptions
 {
-
-    //شرح بیمه های شخص ثالث مشتری
-    public class DescriptionOfThirdPartyInsurance
+    //شرح بیمه نامه بدنه مشتری
+    public class DescriptionOfBodyInsurance
     {
         [Key]
-        public int ThirdPartyID { get; set; }
+        public int BodyID { get; set; }
 
-        [Display(Name = " پلاک خودرو")]
+        [Display(Name = "قیمت خودرو")]
+        [Required(ErrorMessage = "لطفا {0} را وارد کنيد ")]
+        public float CarPrice { get; set; }
+
+        [Display(Name = "خودرو")]
         [Required(ErrorMessage = "لطفا {0} را وارد کنيد ")]
         public string CarTag { get; set; }
 
@@ -22,11 +25,11 @@ namespace DataLayer.Models
 
         [Display(Name = "نوع خودرو")]
         [Required(ErrorMessage = "لطفا {0} را وارد کنيد ")]
-        public string CarType { get; set; }
+        public string TypeOfCar { get; set; }
 
         [Display(Name = "تيپ خودرو")]
         [Required(ErrorMessage = "لطفا {0} را وارد کنيد ")]
-        public string CarBrigade { get; set; }
+        public string StyleCar { get; set; }
 
         [Display(Name = "شماره شاسي")]
         [Required(ErrorMessage = "لطفا {0} را وارد کنيد ")]
@@ -42,19 +45,15 @@ namespace DataLayer.Models
 
         [Display(Name = "VIN خودرو")]
         [Required(ErrorMessage = "لطفا {0} را وارد کنيد ")]
-        public string CarVin { get; set; }
+        public string VinCar { get; set; }
 
-        [Display(Name = "درصد تخفيف راننده")]
+        [Display(Name = "درصد تخفيف بيمه نامه قبلی خودرو")]
         [Required(ErrorMessage = "لطفا {0} را وارد کنيد ")]
-        public string DriverDiscountPercentage { get; set; }
-
-        [Display(Name = "درصد تخفيف بيمه نامه")]
-        [Required(ErrorMessage = "لطفا {0} را وارد کنيد ")]
-        public string PolicyDicountPercantage { get; set; }
+        public string PercentageOfInsuranceDiscount { get; set; }
 
         [Display(Name = "مورد استفاده ")]
         [Required(ErrorMessage = "لطفا {0} را وارد کنيد ")]
-        public string CarUsage { get; set; }
+        public string UsedCar { get; set; }
 
         [Display(Name = "ظرفيت ماشين")]
         [Required(ErrorMessage = "لطفا {0} را وارد کنيد ")]
@@ -62,13 +61,9 @@ namespace DataLayer.Models
 
         [Display(Name = "يدک کش دارد")]
         [Required(ErrorMessage = "لطفا {0} را وارد کنيد ")]
-        public bool TowTruckCar { get; set; }
+        public bool HaveTowTruckCar { get; set; }
 
-        public int CarThirdPartyInsuranceFinancialCoverageID { get; set; }
-
+        public int CarBodyInsurancesConditionID { get; set; }
 
     }
 }
-
-
-
