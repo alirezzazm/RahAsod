@@ -13,14 +13,17 @@ namespace DataLayer.Models.Descriptions
 
         [Display(Name = "تاریخ تولد مشتری")]
         [Required(ErrorMessage = "لطفا {0} را وارد کنيد ")]
+        [MaxLength(20)]
         public string CustomerBirthday { get; set; }
 
         [Display(Name = "شغل")]
         [Required(ErrorMessage = "لطفا {0} را وارد کنيد ")]
+        [MaxLength(50)]
         public string CustomerJob { get; set; }
 
         [Display(Name = "نحوه پرداخت")]
         [Required(ErrorMessage = "لطفا {0} را وارد کنيد ")]
+        [MaxLength(10)]
         public string PaymentMethod { get; set; }
 
         [Display(Name = "مدت بیمه نامه")]

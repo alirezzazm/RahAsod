@@ -9,11 +9,17 @@
 
     #main {
         padding: 2% 5%;
-        background-color: #67B0D1CC;
+        background-color:white;
         direction: rtl;
         text-align: right
     }
+    body {
+        background-color: #67B0D1CC;
+    }
 </style>
+
+
+
 <div id="main" class="container">
     <div class="form-group" style="padding-top:3%">
         <div class="col-md-12">
@@ -28,13 +34,14 @@
 
                     <div class="form-group col-md-2">
                         <label asp-for="DescriptionOfThirdPartyInsurance.CarTag" class="control-label"></label>
-                        <input asp-for="DescriptionOfThirdPartyInsurance.CarTag" class="form-control" />
+                        <input asp-for="DescriptionOfThirdPartyInsurance.CarTag" class="form-control "/>
+
                         <span asp-validation-for="DescriptionOfThirdPartyInsurance.CarTag" class="text-danger"></span>
                     </div>
                     <div class="form-group col-md-3">
                         <label asp-for="DescriptionOfThirdPartyInsurance.CarThirdPartyInsuranceFinancialCoverageID" class="control-label">پوشش مالی</label>
                         <select asp-for="DescriptionOfThirdPartyInsurance.CarThirdPartyInsuranceFinancialCoverageID" class="form-control">
-                            <option disabled selected hidden>پوشش مالی را انتخاب کنید</option>
+                            <option disabled selected >پوشش مالی را انتخاب کنید</option>
                             <option>1 پوشش مالی</option>
                             <option>2 پوشش مالی</option>
                             <option>3 پوشش مالی</option>
@@ -43,7 +50,7 @@
                         <span asp-validation-for="DescriptionOfThirdPartyInsurance.CarThirdPartyInsuranceFinancialCoverageID" class="text-danger"></span>
                     </div>
                 </div>
-              
+
                 <div class="row">
                     <div class="col-md-3">
                         <div class="form-group">
@@ -62,7 +69,7 @@
                         <div class="form-group">
                             @*k  <label asp-for="DescriptionOfThirdPartyInsurance.StyleCar" class="control-label"></label>*@
                             <select asp-for="DescriptionOfThirdPartyInsurance.CarBrigade" class="form-control">
-                                <option disabled selected hidden>نوع ماشین</option>
+                                <option disabled selected hidden>تیپ ماشین</option>
                                 <option>1 ماشین</option>
                                 <option>2 ماشین</option>
                                 <option>3 ماشین</option>
@@ -240,8 +247,6 @@
     </div>
 
 </div>
-
-
 
 
 

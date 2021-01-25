@@ -50,8 +50,9 @@
 
 
 
-
-
+    @*<link href="~/css/masking-input.css" rel="stylesheet" />*@
+    @*<script src="~/js/masking-input.js" data-autoinit="true"></script>
+    <script src="~/js/input-mask.min.js"></script>*@
 
 
     <link href="https://cdn.jsdelivr.net/gh/rastikerdar/samim-font@v[X.Y.Z]/dist/font-face.css" rel="stylesheet" type="text/css" />
@@ -64,7 +65,7 @@
     <header id="header" class="fixed-top header-transparent">
 
         <div class="row">
-            <div class="container d-flex align-items-center" >
+            <div class="container d-flex align-items-center">
                 <div class="logo mr-auto">
                     <h1 class="text-light"><a asp-area="" asp-page="/MainPage/HomePage"><span>نمایندگی ره آسود</span></a></h1>
                     <!-- Uncomment below if you prefer to use an image logo -->
@@ -140,6 +141,9 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+
+  
+
 
     @RenderSection("Scripts", required: false)
 </body>

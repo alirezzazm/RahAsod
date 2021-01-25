@@ -11,6 +11,7 @@ namespace DataLayer.Models.Conditions
         public int CarFireInsuranceID { get; set; }
         [Display(Name = "نام شرط جدید")]
         [Required(ErrorMessage = "لطفا {0} را وارد کنيد ")]
+        [MaxLength(50)]
         public string ConditionNewName { get; set; }
 
         [Display(Name = "درصد ضریب شرط")]

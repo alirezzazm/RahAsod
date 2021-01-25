@@ -22,15 +22,18 @@ namespace DataLayer.Models
 
         [Display(Name = "کد ملي")]
         [Required(ErrorMessage = "لطفا {0} را وارد کنيد ")]
-        public string CustomerNationalCode { get; set; }
+        [RegularExpression("(^[0]*[1-9]+[0-9]*)|([1-9][0-9]*)",ErrorMessage ="فقط عدد وارد کنید")]
+        public int CustomerNationalCode { get; set; }
 
         [Display(Name = "شماره همراه")]
         [Required(ErrorMessage = "لطفا {0} را وارد کنيد ")]
-        public string PhoneNumber { get; set; }
+        [RegularExpression("(^[0]*[1-9]+[0-9]*)|([1-9][0-9]*)", ErrorMessage = "فقط عدد وارد کنید")]
+        public int PhoneNumber { get; set; }
 
         [Display(Name = "تلفن")]
         [Required(ErrorMessage = "لطفا {0} را وارد کنيد ")]
-        public string HomeNumber { get; set; }
+        [RegularExpression("(^[0]*[1-9]+[0-9]*)|([1-9][0-9]*)", ErrorMessage = "فقط عدد وارد کنید")]
+        public int HomeNumber { get; set; }
 
         [Display(Name = "ايميل")]
         [Required(ErrorMessage = "لطفا {0} را وارد کنيد ")]
@@ -48,7 +51,7 @@ namespace DataLayer.Models
 
         [Display(Name = "تکرار رمز عبور")]
         [Required(ErrorMessage = "لطفا {0} را وارد کنيد ")]
-        [DataType(DataType.Password)]
+        [Compare("Password",ErrorMessage ="مطابقت ندارد")]
         public string ConfirmPassword { get; set; }
             
     }

@@ -12,6 +12,7 @@ namespace DataLayer.Models.Conditions
         public int CarBodyInsurancesConditionID { get; set; }
         [Display(Name = "اسم شرط جدید")]
         [Required(ErrorMessage = "لطفا {0} را وارد کنيد ")]
+        [MaxLength(50)]
         public string ConditionBodyNewName { get; set; }
 
         [Display(Name = "درصد ضریب شرط را وارد کنید")]
