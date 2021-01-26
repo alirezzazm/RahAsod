@@ -34,7 +34,7 @@ namespace RahAsod
             services.AddRazorPages()
             .AddRazorPagesOptions(options =>
              {
-                 options.Conventions.AddPageRoute("/Admin/SiteFrontPageSettings/SiteFirstSliderSetting", "");
+                 options.Conventions.AddPageRoute("/MainPage/HomePage", "");
              });
         }
 
