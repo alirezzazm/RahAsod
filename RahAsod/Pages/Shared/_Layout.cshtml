@@ -52,7 +52,7 @@
 
     @*<link href="~/css/masking-input.css" rel="stylesheet" />*@
     @*<script src="~/js/masking-input.js" data-autoinit="true"></script>
-    <script src="~/js/input-mask.min.js"></script>*@
+        <script src="~/js/input-mask.min.js"></script>*@
 
 
     <link href="https://cdn.jsdelivr.net/gh/rastikerdar/samim-font@v[X.Y.Z]/dist/font-face.css" rel="stylesheet" type="text/css" />
@@ -62,14 +62,14 @@
 </head>
 <body>
     <!-- ======= Header ======= -->
-    <header id="header" class="fixed-top header-transparent">
+    <header id="header" class="fixed-top header-transparent ">
 
         <div class="row">
-            <div class="container d-flex align-items-center">
+            <div class="container-fluid d-flex align-items-center">
                 <div class="logo mr-auto">
-                    <h1 class="text-light"><a asp-area="" asp-page="/MainPage/HomePage"><span>نمایندگی ره آسود</span></a></h1>
-                    <!-- Uncomment below if you prefer to use an image logo -->
-                    <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+                    <a href="/MainPage/HomePage"><img src="/img/bg-masthead.png" alt="" class="img-fluid"></a>
+                    <h1 class="text-light d-inline-block"><a asp-area="" asp-page="/MainPage/HomePage"><span>نمایندگی ره آسود</span></a></h1>
+                    @*Uncomment below if you prefer to use an image logo*@
                 </div>
 
                 <nav class="nav-menu d-none d-lg-block">
@@ -101,6 +101,7 @@
                         <li><a asp-page="/CustomerRegistrationPages/Register">ثبت نام در سایت </a></li>
 
                     </ul>
+
                 </nav><!-- .nav-menu -->
 
             </div>
@@ -142,7 +143,7 @@
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
 
-  
+
 
 
     @RenderSection("Scripts", required: false)
