@@ -1,4 +1,8 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> _signInManager
+
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -98,7 +102,25 @@
                         <li><a href="#portfolio">نمونه کارها</a></li>
                         <li><a href="#team">تیم صدور بیمه نامه</a></li>
                         <li><a href="#contact">ارتباط با ما</a></li>
-                        <li><a asp-page="/CustomerRegistrationPages/Register">ثبت نام در سایت </a></li>
+                        @if (_signInManager.IsSignedIn(User))
+                        {
+                            <li class="drop-down">
+                                <a href="#">@User.Identity.Name</a>
+                                <ul>
+                                    <li>
+                                        <form asp-page="LoginCustomerPageModel/Logout" method="post">
+                                            <button type="submit">خروج</button>
+                                        </form>
+                                    </li>
+                                </ul>
+                            </li>
+                        }
+                        else
+                        {
+                            <li><a href="/CustomerRegistrationPages/LoginCustomerPage">ورود</a></li>
+                            <li><a href="/CustomerRegistrationPages/Register">ثبت نام</a></li>
+
+                        }
 
                     </ul>
 

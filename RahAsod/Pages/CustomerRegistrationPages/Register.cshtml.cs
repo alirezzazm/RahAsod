@@ -7,16 +7,20 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using DataLayer.Context;
 using DataLayer.Models;
+using Microsoft.AspNetCore.Identity;
 
 namespace RahAsod.Pages.CustomerRegistrationPages
 {
     public class RegisterModel : PageModel
     {
-        private readonly DataLayer.Context.InsuranceContext _context;
 
-        public RegisterModel(DataLayer.Context.InsuranceContext context)
+        private readonly UserManager<IdentityUser> _userManager;
+        private readonly SignInManager<IdentityUser> _signInManager;
+
+        public RegisterModel(UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager)
         {
-            _context = context;
+            _userManager = userManager;
+            _signInManager = signInManager;
         }
 
         public IActionResult OnGet()
@@ -29,17 +33,37 @@ namespace RahAsod.Pages.CustomerRegistrationPages
 
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://aka.ms/RazorPagesCRUD.
-        public async Task<IActionResult> OnPostAsync()
+        public async Task<IActionResult> OnPost(RegisterCustomer model)
         {
-            if (!ModelState.IsValid)
+            if (ModelState.IsValid)
             {
-                return Page();
+                var user = new RegisterCustomer()
+                {
+                    FirstName = model.FirstName,
+                    LastName = model.LastName,
+                    CustomerNationalCode = model.CustomerNationalCode,
+                    PhoneNumber = model.PhoneNumber,
+                    HomeNumber = model.HomeNumber,
+                    Email = model.Email,
+                    Address = model.Address,
+                };
+                var result = await _userManager.CreateAsync(user, model.Password);
+                if (result.Succeeded)
+                {
+                    await _signInManager.SignInAsync(user, isPersistent: true);
+                    return RedirectToPage("/MainPage/HomePage");
+                }
+                else
+                {
+                    foreach (var error in result.Errors)
+                    {
+                        ModelState.AddModelError("", error.Description);
+                    }
+                }
             }
+            return Page();
 
-            _context.CustomerRegisteration.Add(RegisterCustomer);
-            await _context.SaveChangesAsync();
 
-            return RedirectToPage("./Index");
         }
     }
 }

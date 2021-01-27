@@ -1,7 +1,10 @@
 using DataLayer.Context;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.AspNetCore.Routing;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -31,6 +34,47 @@ namespace RahAsod
             .GetConnectionString("InsuranceConnection")));
 
 
+
+            services.AddDbContext<IdentityDbContext>(options =>
+                 options.UseSqlServer(Configuration.GetConnectionString("InsuranceConnection"),
+                     optionBuilder =>
+                          optionBuilder.MigrationsAssembly("DataLayer")
+            ));
+
+            services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<IdentityDbContext>()
+                .AddDefaultTokenProviders();
+
+
+            services.Configure<IdentityOptions>(options =>
+            {
+                options.Password.RequireDigit = true;
+                options.Password.RequiredLength = 6;
+                options.Password.RequireUppercase = false;
+                options.Password.RequireNonAlphanumeric = false;
+                options.Password.RequiredUniqueChars = 1;
+                options.Password.RequireLowercase = true;
+                options.User.AllowedUserNameCharacters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-";
+                options.User.RequireUniqueEmail = true;
+
+
+                options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(5);
+                options.Lockout.MaxFailedAccessAttempts = 5;
+                options.Lockout.AllowedForNewUsers = true;
+
+            });
+            services.ConfigureApplicationCookie(options =>
+            {
+                options.Cookie.Name = "RahAsood";
+                options.Cookie.HttpOnly = true;
+                options.ExpireTimeSpan = TimeSpan.FromMinutes(60);
+                options.LoginPath = "/CustomerRegistrationPages/LoginCustomerPage";
+                //options.LogoutPath = "/Account/Logout";
+                options.ReturnUrlParameter = CookieAuthenticationDefaults.ReturnUrlParameter;
+                options.SlidingExpiration = true;
+                services.ConfigureApplicationCookie(o => o.LoginPath = "/CustomerRegistrationPages/LoginCustomerPage");
+            });
+
+
             services.AddRazorPages()
             .AddRazorPagesOptions(options =>
              {
@@ -54,6 +98,7 @@ namespace RahAsod
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
+
 
             app.UseRouting();
 

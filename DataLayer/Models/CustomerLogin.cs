@@ -12,7 +12,7 @@ namespace DataLayer.Models
         [Display(Name = "کدملی ")]
         [Required(ErrorMessage = "لطفا {0} را وارد کنيد ")]
         [RegularExpression("(^[0]*[1-9]+[0-9]*)|([1-9][0-9]*)", ErrorMessage = "فقط عدد وارد کنید")]
-        public int NationalCode { get; set; }
+        public string NationalCode { get; set; }
 
         [Display(Name = "رمز عبور ")]
         [Required(ErrorMessage = "لطفا {0} را وارد کنيد ")]
