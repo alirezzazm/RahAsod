@@ -53,7 +53,7 @@ namespace RahAsod
                 options.Password.RequireNonAlphanumeric = false;
                 options.Password.RequiredUniqueChars = 1;
                 options.Password.RequireLowercase = true;
-                options.User.AllowedUserNameCharacters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-";
+                options.User.AllowedUserNameCharacters = null;
                 options.User.RequireUniqueEmail = true;
 
 

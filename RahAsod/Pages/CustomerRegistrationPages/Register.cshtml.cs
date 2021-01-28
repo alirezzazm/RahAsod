@@ -23,44 +23,49 @@ namespace RahAsod.Pages.CustomerRegistrationPages
             _signInManager = signInManager;
         }
 
+        [BindProperty]
+        public RegisterCustomer model { get; set; }
         public IActionResult OnGet()
         {
             return Page();
         }
 
-        [BindProperty]
-        public RegisterCustomer RegisterCustomer { get; set; }
+
 
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://aka.ms/RazorPagesCRUD.
-        public async Task<IActionResult> OnPost(RegisterCustomer model)
+        public async Task<IActionResult> OnPost()
         {
             if (ModelState.IsValid)
             {
-                var user = new RegisterCustomer()
-                {
-                    FirstName = model.FirstName,
-                    LastName = model.LastName,
-                    CustomerNationalCode = model.CustomerNationalCode,
-                    PhoneNumber = model.PhoneNumber,
-                    HomeNumber = model.HomeNumber,
-                    Email = model.Email,
-                    Address = model.Address,
-                };
-                var result = await _userManager.CreateAsync(user, model.Password);
-                if (result.Succeeded)
-                {
-                    await _signInManager.SignInAsync(user, isPersistent: true);
-                    return RedirectToPage("/MainPage/HomePage");
-                }
-                else
-                {
-                    foreach (var error in result.Errors)
-                    {
-                        ModelState.AddModelError("", error.Description);
-                    }
-                }
+
+                //var user = new RegisterCustomer()
+                //{
+                //    Id = model.NationalCode,
+                //    NationalCode = model.NationalCode,
+                //    UserName = model.FirstName + " " + model.LastName,
+                //    FirstName = model.FirstName,
+                //    LastName = model.LastName,
+                //    PhoneNumber = model.PhoneNumber,
+                //    HomeNumber = model.HomeNumber,
+                //    Email = model.Email,
+                //    Address = model.Address
+                //};
+                //var result = await _userManager.CreateAsync(user, model.Password);
+                //if (result.Succeeded)
+                //{
+                //    await _signInManager.SignInAsync(user, isPersistent: true);
+                //    return RedirectToPage("/MainPage/HomePage");
+                //}
+                //else
+                //{
+                //    foreach (var error in result.Errors)
+                //    {
+                //        ModelState.AddModelError("", error.Description);
+                //    }
+                //}
             }
+
             return Page();
 
 

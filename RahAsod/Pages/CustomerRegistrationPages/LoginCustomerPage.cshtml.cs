@@ -19,7 +19,7 @@ namespace RahAsod.Pages.CustomerRegistrationPages
             _signInManager = signInManager;
         }
 
-        public async Task<IActionResult> Logout()
+        public async Task<IActionResult> OnPostLogout()
         {
             await _signInManager.SignOutAsync();
             return RedirectToPage("/MainPage/HomePage");

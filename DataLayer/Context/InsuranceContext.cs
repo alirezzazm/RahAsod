@@ -18,6 +18,8 @@ namespace DataLayer.Context
         {
 
         }
+      
+
         public DbSet<CarFinancialCoverage> CarFinancialCoverages { get; set; }
         public DbSet<ConditionOfCarBody> CarBodyCondition { get; set; }
         public DbSet<ConditionOfFire> FireCondition { get; set; }

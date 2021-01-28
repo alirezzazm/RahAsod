@@ -15,6 +15,20 @@
     <Compile Remove="Migrations\20210123143418_modelChanging.Designer.cs" />
     <Compile Remove="Migrations\20210127111840_registerAndLogin.cs" />
     <Compile Remove="Migrations\20210127111840_registerAndLogin.Designer.cs" />
+    <Compile Remove="Migrations\20210128093731_changeContext.cs" />
+    <Compile Remove="Migrations\20210128093731_changeContext.Designer.cs" />
+    <Compile Remove="Migrations\20210128094431_changeContext.cs" />
+    <Compile Remove="Migrations\20210128094431_changeContext.Designer.cs" />
+    <Compile Remove="Migrations\20210128101038_enessialChanges.cs" />
+    <Compile Remove="Migrations\20210128101038_enessialChanges.Designer.cs" />
+    <Compile Remove="Migrations\20210128102611_changeKeyForRegister.cs" />
+    <Compile Remove="Migrations\20210128102611_changeKeyForRegister.Designer.cs" />
+    <Compile Remove="Migrations\20210128103145_changeRegisterModelKey.cs" />
+    <Compile Remove="Migrations\20210128103145_changeRegisterModelKey.Designer.cs" />
+    <Compile Remove="Migrations\20210128103834_changeRegisterModel.cs" />
+    <Compile Remove="Migrations\20210128103834_changeRegisterModel.Designer.cs" />
+    <Compile Remove="Migrations\20210128110721_InitialDatabaseSecondary.cs" />
+    <Compile Remove="Migrations\20210128110721_InitialDatabaseSecondary.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>
