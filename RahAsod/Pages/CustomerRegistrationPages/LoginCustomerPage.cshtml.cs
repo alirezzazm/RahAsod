@@ -12,9 +12,9 @@ namespace RahAsod.Pages.CustomerRegistrationPages
     public class LoginCustomerPageModel : PageModel
     {
 
-        private readonly SignInManager<IdentityUser> _signInManager;
+        private readonly SignInManager<RegisterCustomer> _signInManager;
 
-        public LoginCustomerPageModel(SignInManager<IdentityUser> signInManager)
+        public LoginCustomerPageModel(SignInManager<RegisterCustomer> signInManager)
         {
             _signInManager = signInManager;
         }

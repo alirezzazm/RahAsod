@@ -14,10 +14,10 @@ namespace RahAsod.Pages.CustomerRegistrationPages
     public class RegisterModel : PageModel
     {
 
-        private readonly UserManager<IdentityUser> _userManager;
-        private readonly SignInManager<IdentityUser> _signInManager;
+        private readonly UserManager<RegisterCustomer> _userManager;
+        private readonly SignInManager<RegisterCustomer> _signInManager;
 
-        public RegisterModel(UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager)
+        public RegisterModel(UserManager<RegisterCustomer> userManager, SignInManager<RegisterCustomer> signInManager)
         {
             _userManager = userManager;
             _signInManager = signInManager;
@@ -39,31 +39,32 @@ namespace RahAsod.Pages.CustomerRegistrationPages
             if (ModelState.IsValid)
             {
 
-                //var user = new RegisterCustomer()
-                //{
-                //    Id = model.NationalCode,
-                //    NationalCode = model.NationalCode,
-                //    UserName = model.FirstName + " " + model.LastName,
-                //    FirstName = model.FirstName,
-                //    LastName = model.LastName,
-                //    PhoneNumber = model.PhoneNumber,
-                //    HomeNumber = model.HomeNumber,
-                //    Email = model.Email,
-                //    Address = model.Address
-                //};
-                //var result = await _userManager.CreateAsync(user, model.Password);
-                //if (result.Succeeded)
-                //{
-                //    await _signInManager.SignInAsync(user, isPersistent: true);
-                //    return RedirectToPage("/MainPage/HomePage");
-                //}
-                //else
-                //{
-                //    foreach (var error in result.Errors)
-                //    {
-                //        ModelState.AddModelError("", error.Description);
-                //    }
-                //}
+                var user = new RegisterCustomer()
+                {
+                    Id = model.CustomerNationalCode,
+                    CustomerNationalCode = model.CustomerNationalCode,
+                    UserName = model.FirstName + " " + model.LastName,
+                    FirstName = model.FirstName,
+                    LastName = model.LastName,
+                    PhoneNumber = model.PhoneNumber,
+                    HomeNumber = model.HomeNumber,
+                    Email = model.Email,
+                    Address = model.Address,
+                                   
+                };
+                var result = await _userManager.CreateAsync(user,model.Password);
+                if (result.Succeeded)
+                {
+                    await _signInManager.SignInAsync(user, isPersistent: true);
+                    return RedirectToPage("/MainPage/HomePage");
+                }
+                else
+                {
+                    foreach (var error in result.Errors)
+                    {
+                        ModelState.AddModelError("", error.Description);
+                    }
+                }
             }
 
             return Page();

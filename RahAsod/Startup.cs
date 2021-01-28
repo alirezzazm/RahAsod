@@ -1,4 +1,5 @@
 using DataLayer.Context;
+using DataLayer.Models;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -35,13 +36,13 @@ namespace RahAsod
 
 
 
-            services.AddDbContext<IdentityDbContext>(options =>
+            services.AddDbContext<IdentityContext>(options =>
                  options.UseSqlServer(Configuration.GetConnectionString("InsuranceConnection"),
                      optionBuilder =>
                           optionBuilder.MigrationsAssembly("DataLayer")
             ));
 
-            services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<IdentityDbContext>()
+            services.AddIdentity<RegisterCustomer, IdentityRole>().AddEntityFrameworkStores<IdentityContext>()
                 .AddDefaultTokenProviders();
 
 
@@ -66,7 +67,7 @@ namespace RahAsod
             {
                 options.Cookie.Name = "RahAsood";
                 options.Cookie.HttpOnly = true;
-                options.ExpireTimeSpan = TimeSpan.FromMinutes(60);
+              
                 options.LoginPath = "/CustomerRegistrationPages/LoginCustomerPage";
                 //options.LogoutPath = "/Account/Logout";
                 options.ReturnUrlParameter = CookieAuthenticationDefaults.ReturnUrlParameter;

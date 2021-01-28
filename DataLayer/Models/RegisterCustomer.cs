@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
 namespace DataLayer.Models
@@ -39,11 +40,13 @@ namespace DataLayer.Models
         [Display(Name = "رمز عبور")]
         [Required(ErrorMessage = "لطفا {0} را وارد کنيد ")]
         [DataType(DataType.Password)]
+        [NotMapped]
         public string Password { get; set; }
 
         [Display(Name = "تکرار رمز عبور")]
         [Required(ErrorMessage = "لطفا {0} را وارد کنيد ")]
         [Compare("Password", ErrorMessage = "مطابقت ندارد")]
+        [NotMapped]
         public string ConfirmPassword { get; set; }
     }
 }

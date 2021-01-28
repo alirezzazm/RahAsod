@@ -29,7 +29,7 @@ namespace DataLayer.Context
         public DbSet<DescriptionOfThirdPartyInsurance> ThirdPartyInsurance { get; set; }
         public DbSet<DescriptionOfCustomerInsurance> CustomerInsurances { get; set; }
         public DbSet<InsurancesOfCustomer> CustomerInsureances { get; set; }
-        public DbSet<RegisterCustomer> CustomerRegisteration { get; set; }
+    
         
     }
 }

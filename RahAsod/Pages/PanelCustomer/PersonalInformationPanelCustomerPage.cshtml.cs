@@ -25,13 +25,13 @@ namespace RahAsod.Pages.PanelCustomer
 
         public async Task<IActionResult> OnPostAsync()
         {
-            if (!ModelState.IsValid)
-            {
-                return Page();
-            }
+            //if (!ModelState.IsValid)
+            //{
+            //    return Page();
+            //}
 
-            _context.CustomerRegisteration.Add(RegisterCustomer);
-            await _context.SaveChangesAsync();
+            //_context.CustomerRegisteration.Add(RegisterCustomer);
+            //await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");
         }
