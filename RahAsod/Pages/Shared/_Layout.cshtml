@@ -116,8 +116,8 @@
                                 <a href="#">@User.Identity.Name</a>
                                 <ul>
                                     <li>
-                                        <form asp-page-handler="OnPostLogout"  method="post">
-                                            <button type="submit">خروج</button>
+                                        <form asp-page="LoginCustomerPage" asp-page-handler="Logout" method="post">
+                                            <button type="submit" >خروج</button>
                                         </form>
                                     </li>
                                 </ul>
