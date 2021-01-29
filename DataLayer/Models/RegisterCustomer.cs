@@ -8,23 +8,24 @@ using System.Text;
 
 namespace DataLayer.Models
 {
-   public class RegisterCustomer : IdentityUser
+    public class RegisterCustomer : IdentityUser
     {
-        [Key]
-        public int CustomerID { get; set; }
 
-       
         [Display(Name = "نام")]
         [Required(ErrorMessage = "لطفا {0} را وارد کنيد ")]
+        [MaxLength(50, ErrorMessage = "تعداد کاراکتر ورودی بیش از حد مجاز است")]
         public string FirstName { get; set; }
 
         [Display(Name = "نام خانوادگي")]
         [Required(ErrorMessage = "لطفا {0} را وارد کنيد ")]
+        [MaxLength(60, ErrorMessage = "تعداد کاراکتر ورودی بیش از حد مجاز است")]
         public string LastName { get; set; }
 
         [Display(Name = "کد ملي")]
         [Required(ErrorMessage = "لطفا {0} را وارد کنيد ")]
         [RegularExpression("(^[0]*[1-9]+[0-9]*)|([1-9][0-9]*)", ErrorMessage = "فقط عدد وارد کنید")]
+        [MaxLength(20, ErrorMessage = "تعداد کاراکتر ورودی بیش از حد مجاز است")]
+        [NotMapped]
         public string CustomerNationalCode { get; set; }
 
 

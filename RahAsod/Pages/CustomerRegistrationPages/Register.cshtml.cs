@@ -42,17 +42,15 @@ namespace RahAsod.Pages.CustomerRegistrationPages
                 var user = new RegisterCustomer()
                 {
                     Id = model.CustomerNationalCode,
-                    CustomerNationalCode = model.CustomerNationalCode,
-                    UserName = model.FirstName + " " + model.LastName,
+                    UserName = model.CustomerNationalCode,
                     FirstName = model.FirstName,
                     LastName = model.LastName,
                     PhoneNumber = model.PhoneNumber,
                     HomeNumber = model.HomeNumber,
                     Email = model.Email,
                     Address = model.Address,
-                                   
                 };
-                var result = await _userManager.CreateAsync(user,model.Password);
+                var result = await _userManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
                     await _signInManager.SignInAsync(user, isPersistent: true);

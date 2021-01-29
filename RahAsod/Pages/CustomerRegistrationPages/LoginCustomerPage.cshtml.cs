@@ -45,7 +45,7 @@ namespace RahAsod.Pages.CustomerRegistrationPages
             if (ModelState.IsValid)
             {
 
-                var result = await _signInManager.PasswordSignInAsync(Loginmodel.Id, Loginmodel.Password, false, true);
+                var result = await _signInManager.PasswordSignInAsync(Loginmodel.NationalCode, Loginmodel.Password, false, true);
                 if (result.Succeeded)
                 {
                     if (!string.IsNullOrEmpty(returnUrl) && Url.IsLocalUrl(returnUrl))

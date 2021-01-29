@@ -63,17 +63,7 @@ namespace RahAsod
                 options.Lockout.AllowedForNewUsers = true;
 
             });
-            //services.ConfigureApplicationCookie(options =>
-            //{
-            //    options.Cookie.Name = "RahAsood";
-            //    options.Cookie.HttpOnly = true;
-              
-            //    options.LoginPath = "/CustomerRegistrationPages/LoginCustomerPage";
-            //    //options.LogoutPath = "/Account/Logout";
-            //    options.ReturnUrlParameter = CookieAuthenticationDefaults.ReturnUrlParameter;
-            //    options.SlidingExpiration = true;
-            //    services.ConfigureApplicationCookie(o => o.LoginPath = "/CustomerRegistrationPages/LoginCustomerPage");
-            //});
+        
 
 
             services.AddRazorPages()

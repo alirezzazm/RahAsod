@@ -55,8 +55,4 @@
     </PackageReference>
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Migrations\Identity\" />
-  </ItemGroup>
-
 </Project>
