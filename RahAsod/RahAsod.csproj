@@ -32,6 +32,33 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="wwwroot\font-awesome\fonts\fontawesome-webfont.svg" />
+    <None Include="wwwroot\font-awesome\less\bordered-pulled.less" />
+    <None Include="wwwroot\font-awesome\less\core.less" />
+    <None Include="wwwroot\font-awesome\less\fixed-width.less" />
+    <None Include="wwwroot\font-awesome\less\font-awesome.less" />
+    <None Include="wwwroot\font-awesome\less\icons.less" />
+    <None Include="wwwroot\font-awesome\less\larger.less" />
+    <None Include="wwwroot\font-awesome\less\list.less" />
+    <None Include="wwwroot\font-awesome\less\mixins.less" />
+    <None Include="wwwroot\font-awesome\less\path.less" />
+    <None Include="wwwroot\font-awesome\less\rotated-flipped.less" />
+    <None Include="wwwroot\font-awesome\less\spinning.less" />
+    <None Include="wwwroot\font-awesome\less\stacked.less" />
+    <None Include="wwwroot\font-awesome\less\variables.less" />
+    <None Include="wwwroot\font-awesome\scss\font-awesome.scss" />
+    <None Include="wwwroot\font-awesome\scss\_bordered-pulled.scss" />
+    <None Include="wwwroot\font-awesome\scss\_core.scss" />
+    <None Include="wwwroot\font-awesome\scss\_fixed-width.scss" />
+    <None Include="wwwroot\font-awesome\scss\_icons.scss" />
+    <None Include="wwwroot\font-awesome\scss\_larger.scss" />
+    <None Include="wwwroot\font-awesome\scss\_list.scss" />
+    <None Include="wwwroot\font-awesome\scss\_mixins.scss" />
+    <None Include="wwwroot\font-awesome\scss\_path.scss" />
+    <None Include="wwwroot\font-awesome\scss\_rotated-flipped.scss" />
+    <None Include="wwwroot\font-awesome\scss\_spinning.scss" />
+    <None Include="wwwroot\font-awesome\scss\_stacked.scss" />
+    <None Include="wwwroot\font-awesome\scss\_variables.scss" />
     <None Include="wwwroot\fonts\BKoodakBold.afm" />
     <None Include="wwwroot\fonts\BKoodakBold.svg" />
     <None Include="wwwroot\fonts\fontawesome-webfont.svg" />
@@ -50,8 +77,16 @@
     <None Include="wwwroot\js\demo\datatables-demo.js" />
     <None Include="wwwroot\js\dynamics.min.js" />
     <None Include="wwwroot\js\main.js" />
-    <None Include="wwwroot\js\sb-admin-2.js" />
-    <None Include="wwwroot\js\sb-admin-2.min.js" />
+    <None Include="wwwroot\js\plugins\dataTables\dataTables.bootstrap.js" />
+    <None Include="wwwroot\js\plugins\dataTables\jquery.dataTables.js" />
+    <None Include="wwwroot\js\plugins\flot\excanvas.min.js" />
+    <None Include="wwwroot\js\plugins\flot\jquery.flot.js" />
+    <None Include="wwwroot\js\plugins\flot\jquery.flot.pie.js" />
+    <None Include="wwwroot\js\plugins\flot\jquery.flot.resize.js" />
+    <None Include="wwwroot\js\plugins\flot\jquery.flot.tooltip.min.js" />
+    <None Include="wwwroot\js\plugins\metisMenu\jquery.metisMenu.js" />
+    <None Include="wwwroot\js\plugins\morris\morris.js" />
+    <None Include="wwwroot\js\plugins\morris\raphael-2.1.0.min.js" />
     <None Include="wwwroot\js\site.js" />
     <None Include="wwwroot\scss\navs\_global.scss" />
     <None Include="wwwroot\scss\navs\_sidebar.scss" />
