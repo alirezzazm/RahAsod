@@ -12,11 +12,14 @@ body {
   font-family: "Open Sans", sans-serif;
   color: #444444;
 }
-
+.submit-blue-button {
+    background: #67B0D1CC;
+}
 /*form-control*/
 .form-direction{
     direction:rtl;
 }
+
 .form-control {
     display: block;
     width: 100%;

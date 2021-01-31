@@ -18,6 +18,8 @@ namespace DataLayer.Context
         {
 
         }
+      
+
         public DbSet<CarFinancialCoverage> CarFinancialCoverages { get; set; }
         public DbSet<ConditionOfCarBody> CarBodyCondition { get; set; }
         public DbSet<ConditionOfFire> FireCondition { get; set; }
@@ -27,7 +29,7 @@ namespace DataLayer.Context
         public DbSet<DescriptionOfThirdPartyInsurance> ThirdPartyInsurance { get; set; }
         public DbSet<DescriptionOfCustomerInsurance> CustomerInsurances { get; set; }
         public DbSet<InsurancesOfCustomer> CustomerInsureances { get; set; }
-        public DbSet<RegisterCustomer> CustomerRegisteration { get; set; }
+    
         
     }
 }

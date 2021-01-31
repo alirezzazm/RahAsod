@@ -14,34 +14,37 @@ namespace RahAsod.Pages.CustomerRegistrationPages
     public class RegisterModel : PageModel
     {
 
-        private readonly UserManager<IdentityUser> _userManager;
-        private readonly SignInManager<IdentityUser> _signInManager;
+        private readonly UserManager<RegisterCustomer> _userManager;
+        private readonly SignInManager<RegisterCustomer> _signInManager;
 
-        public RegisterModel(UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager)
+        public RegisterModel(UserManager<RegisterCustomer> userManager, SignInManager<RegisterCustomer> signInManager)
         {
             _userManager = userManager;
             _signInManager = signInManager;
         }
 
+        [BindProperty]
+        public RegisterCustomer model { get; set; }
         public IActionResult OnGet()
         {
             return Page();
         }
 
-        [BindProperty]
-        public RegisterCustomer RegisterCustomer { get; set; }
+
 
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://aka.ms/RazorPagesCRUD.
-        public async Task<IActionResult> OnPost(RegisterCustomer model)
+        public async Task<IActionResult> OnPost()
         {
             if (ModelState.IsValid)
             {
+
                 var user = new RegisterCustomer()
                 {
+                    Id = model.CustomerNationalCode,
+                    UserName = model.CustomerNationalCode,
                     FirstName = model.FirstName,
                     LastName = model.LastName,
-                    CustomerNationalCode = model.CustomerNationalCode,
                     PhoneNumber = model.PhoneNumber,
                     HomeNumber = model.HomeNumber,
                     Email = model.Email,
@@ -61,6 +64,7 @@ namespace RahAsod.Pages.CustomerRegistrationPages
                     }
                 }
             }
+
             return Page();
 
 

@@ -15,6 +15,34 @@
     <Compile Remove="Migrations\20210123143418_modelChanging.Designer.cs" />
     <Compile Remove="Migrations\20210127111840_registerAndLogin.cs" />
     <Compile Remove="Migrations\20210127111840_registerAndLogin.Designer.cs" />
+    <Compile Remove="Migrations\20210128093731_changeContext.cs" />
+    <Compile Remove="Migrations\20210128093731_changeContext.Designer.cs" />
+    <Compile Remove="Migrations\20210128094431_changeContext.cs" />
+    <Compile Remove="Migrations\20210128094431_changeContext.Designer.cs" />
+    <Compile Remove="Migrations\20210128101038_enessialChanges.cs" />
+    <Compile Remove="Migrations\20210128101038_enessialChanges.Designer.cs" />
+    <Compile Remove="Migrations\20210128102611_changeKeyForRegister.cs" />
+    <Compile Remove="Migrations\20210128102611_changeKeyForRegister.Designer.cs" />
+    <Compile Remove="Migrations\20210128103145_changeRegisterModelKey.cs" />
+    <Compile Remove="Migrations\20210128103145_changeRegisterModelKey.Designer.cs" />
+    <Compile Remove="Migrations\20210128103834_changeRegisterModel.cs" />
+    <Compile Remove="Migrations\20210128103834_changeRegisterModel.Designer.cs" />
+    <Compile Remove="Migrations\20210128110721_InitialDatabaseSecondary.cs" />
+    <Compile Remove="Migrations\20210128110721_InitialDatabaseSecondary.Designer.cs" />
+    <Compile Remove="Migrations\20210128194147_customizeIdentity.cs" />
+    <Compile Remove="Migrations\20210128194147_customizeIdentity.Designer.cs" />
+    <Compile Remove="Migrations\20210128203657_changeIdentityuserToRegisterCustomer.cs" />
+    <Compile Remove="Migrations\20210128203657_changeIdentityuserToRegisterCustomer.Designer.cs" />
+    <Compile Remove="Migrations\20210128210316_addNotMappedPropertyToComparePassword.cs" />
+    <Compile Remove="Migrations\20210128210316_addNotMappedPropertyToComparePassword.Designer.cs" />
+    <Compile Remove="Migrations\20210128212633_addNotMappedPropertyToPassword.cs" />
+    <Compile Remove="Migrations\20210128212633_addNotMappedPropertyToPassword.Designer.cs" />
+    <Compile Remove="Migrations\IdentityDb\20210128182117_addPropertiesToIdentity.cs" />
+    <Compile Remove="Migrations\IdentityDb\20210128182117_addPropertiesToIdentity.Designer.cs" />
+    <Compile Remove="Migrations\IdentityDb\20210128193505_customizeIdentity.cs" />
+    <Compile Remove="Migrations\IdentityDb\20210128193505_customizeIdentity.Designer.cs" />
+    <Compile Remove="Migrations\Identity\20210128200034_AddIdentityContext.cs" />
+    <Compile Remove="Migrations\Identity\20210128200034_AddIdentityContext.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>

@@ -1,9 +1,14 @@
 ﻿@using Microsoft.AspNetCore.Identity
-@inject SignInManager<IdentityUser> _signInManager
+@inject SignInManager<DataLayer.Models.RegisterCustomer> _signInManager
 
-
+<style>
+    .modal-header .close {
+        margin: 1rem 1rem 1rem 1rem;
+    }
+</style>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -11,7 +16,9 @@
 
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
-    <meta charset="utf-8">
+    <link href="~/css/font-awesome.min.css" rel="stylesheet" />
+
+
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
     <title>Squadfree Bootstrap Template - Index</title>
@@ -36,15 +43,6 @@
     <!-- Template Main CSS File -->
     <link href="~/css/style.css" rel="stylesheet">
 
-    <!-- =======================================================
-    * Template Name: Squadfree - v2.2.0
-    * Template URL: https://bootstrapmade.com/squadfree-free-bootstrap-template-creative/
-    * Author: BootstrapMade.com
-    * License: https://bootstrapmade.com/license/
-    ======================================================== -->
-
-
-
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -53,17 +51,12 @@
 
 
 
-
-    @*<link href="~/css/masking-input.css" rel="stylesheet" />*@
-    @*<script src="~/js/masking-input.js" data-autoinit="true"></script>
-        <script src="~/js/input-mask.min.js"></script>*@
-
-
     <link href="https://cdn.jsdelivr.net/gh/rastikerdar/samim-font@v[X.Y.Z]/dist/font-face.css" rel="stylesheet" type="text/css" />
 
 
 
 </head>
+
 <body>
     <!-- ======= Header ======= -->
     <header id="header" class="fixed-top header-transparent ">
@@ -117,9 +110,7 @@
                                 <a href="#">@User.Identity.Name</a>
                                 <ul>
                                     <li>
-                                        <form asp-page="LoginCustomerPageModel/Logout" method="post">
-                                            <button type="submit">خروج</button>
-                                        </form>
+                                        <a href="#ExitModal" data-toggle="modal" data-target="#ExitModal">خروج</a>
                                     </li>
                                 </ul>
                             </li>
@@ -139,11 +130,34 @@
         </div>
 
 
-
     </header><!-- End Header -->
     <div>
         <main role="main">
             @RenderBody()
+            <!--modal-->
+            <div class="modal fade" id="ExitModal" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header ">
+                            <h5 class="modal-title">خروج</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <span>آیا برای خروج اطمینان دارید ؟</span>
+                        </div>
+                        <div class="modal-footer">
+                            <form method="post" asp-page="/CustomerRegistrationPages/LoginCustomerPage" asp-page-handler="Logout">
+                                <button type="submit" class="btn btn-danger">تایید</button>
+                            </form>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">انصراف</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--End modal-->
+
         </main>
     </div>
 

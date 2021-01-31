@@ -14,7 +14,7 @@
                     <div class="col-lg-12">
                         <div class="p-5">
 
-                            <form class="user" method="post">
+                            @*<form class="user" method="post">
                                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
 
@@ -27,13 +27,13 @@
                                         <input type="text" class="form-control form-control-user text-center" id="exampleLastName" placeholder="نام خانوادگی" asp-for="RegisterCustomer.LastName" />
                                         <span asp-validation-for="RegisterCustomer.LastName" class="text-danger"></span>
                                     </div>
-                                </div>
+                                </div>*@
 
 
-                                <div class="form-group row">
+                                @*<div class="form-group row">
                                     <div class="col-sm-4 mb-3 mb-sm-0">
-                                        <input type="number" class="form-control form-control-user text-center" id="exampleFirstName" placeholder="کد ملی" asp-for="RegisterCustomer.CustomerNationalCode" />
-                                        <span asp-validation-for="RegisterCustomer.CustomerNationalCode" class="text-danger"></span>
+                                        <input type="number" class="form-control form-control-user text-center" id="exampleFirstName" placeholder="کد ملی" asp-for="RegisterCustomer.Id" />
+                                        <span asp-validation-for="RegisterCustomer.Id" class="text-danger"></span>
                                     </div>
                                     <div class="col-sm-4">
                                         <input type="number" class="form-control form-control-user text-center" id="exampleLastName" placeholder="شماره همراه" asp-for="RegisterCustomer.PhoneNumber" />
@@ -44,24 +44,24 @@
                                         <input type="number" class="form-control form-control-user text-center" id="exampleLastName" placeholder="شماره منزل" asp-for="RegisterCustomer.HomeNumber" />
                                         <span asp-validation-for="RegisterCustomer.HomeNumber" class="text-danger"></span>
 
-                                    </div>
-                                </div>
+                                    </div>*@
+                                @*</div>*@
 
 
 
-                                <div class="form-group">
+                                @*<div class="form-group">
                                     <input type="email" class="form-control form-control-user text-center" id="exampleInputEmail" placeholder="ایمیل" asp-for="RegisterCustomer.Email" />
                                     <span asp-validation-for="RegisterCustomer.Email" class="text-danger"></span>
                                 </div>
                                 <div class="form-group">
                                     <input type="email" class="form-control form-control-user text-center" id="exampleInputEmail" placeholder="آدرس منزل" asp-for="RegisterCustomer.Address" />
                                     <span asp-validation-for="RegisterCustomer.Address" class="text-danger"></span>
-                                </div>
+                                </div>*@
 
 
 
 
-                                <div class="form-group row">
+                                @*<div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
                                         <input type="password" class="form-control form-control-user text-center" id="exampleInputPassword" placeholder="رمز" asp-for="RegisterCustomer.Password" />
                                         <span asp-validation-for="RegisterCustomer.Password" class="text-danger"></span>
@@ -79,11 +79,11 @@
                                    style="background-color:#67B0D1CC;" value="Create">
                                     ویرایش اطلاعات
                                 </a>
-                                <hr>
+                                <hr>*@
 
 
                             
-                            </form>
+                            @*</form>*@
 
                             @section Scripts {
                                 @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
