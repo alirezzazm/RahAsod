@@ -1,0 +1,26 @@
+﻿
+#carimage {
+    border: 1px solid #ccc;
+    text-align: center;
+    width: 90%;
+    height: 90%;
+    margin-top: 50px;
+    transition: 0.5s;
+}
+
+    #carimage:hover {
+        background-color: #d7ecf7;
+        color: white;
+        transform: scale(1.04);
+        transition: 0.5s;
+        border: 1px solid #96ecff;
+    }
+
+    #carimage img {
+        width: 100px;
+        height: 100px;
+    }
+
+    #carimage h4 {
+        color: black;
+    }

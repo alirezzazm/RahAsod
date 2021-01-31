@@ -5,6 +5,7 @@ using DataLayer.Repositories;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace DataLayer.Services
@@ -74,6 +75,23 @@ namespace DataLayer.Services
         public void Dispose()
         {
             _context.Dispose();
+        }
+
+        public bool AddNewCar(Car newcar)
+        {
+            try
+            {
+                _context.Add(newcar);
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+        public IEnumerable<string> ShowCarNames(string name)
+        {
+            return _context.CarTypes.Select(n => n.CarName).Where(c=>c.Contains(name));
         }
     }
 }

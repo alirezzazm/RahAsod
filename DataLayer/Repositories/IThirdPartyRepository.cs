@@ -13,6 +13,10 @@ namespace DataLayer.Repositories
         bool DeleteThirdparty(DescriptionOfThirdPartyInsurance thirdparty);
 
         IEnumerable<DescriptionOfThirdPartyInsurance> ShowAllThirdparty();
+
+        bool AddNewCar(Car newcar);
+        IEnumerable<string> ShowCarNames(string name);
+
         void Save();
     }
 }
