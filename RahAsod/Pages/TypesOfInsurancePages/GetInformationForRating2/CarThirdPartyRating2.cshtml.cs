@@ -6,16 +6,17 @@ using DataLayer.Models.Descriptions;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace RahAsod.Pages.TypesOfInsurancePages.GetInformationForRating
+namespace RahAsod.Pages.TypesOfInsurancePages.GetInformationForRating2
 {
-    public class CarThirdPartyRatingModel : PageModel
+    public class CarThirdPartyRating2Model : PageModel
     {
         private readonly DataLayer.Context.InsuranceContext _context;
-
-        public CarThirdPartyRatingModel(DataLayer.Context.InsuranceContext context)
+        public CarThirdPartyRating2Model(DataLayer.Context.InsuranceContext context)
         {
-            
+            _context = context;
+
         }
+
         public IActionResult OnGet()
         {
             return Page();
@@ -38,5 +39,6 @@ namespace RahAsod.Pages.TypesOfInsurancePages.GetInformationForRating
 
             return RedirectToPage("./Index");
         }
+
     }
 }

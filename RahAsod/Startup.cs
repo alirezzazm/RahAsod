@@ -69,7 +69,7 @@ namespace RahAsod
             services.AddRazorPages()
             .AddRazorPagesOptions(options =>
              {
-                 options.Conventions.AddPageRoute("/TypesOfInsurancePages/CarThirdPartyInsurance", "");
+                 options.Conventions.AddPageRoute("/TypesOfInsurancePages/GetInformationForRating/CarThirdPartyRating", "");
              });
         }
 
