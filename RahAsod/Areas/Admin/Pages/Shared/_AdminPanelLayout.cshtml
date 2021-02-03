@@ -19,6 +19,8 @@
     <link href="css/plugins/timeline/timeline.css" rel="stylesheet">
 
 
+    <link href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.min.css" rel="stylesheet" />
+
 </head>
 <body>
     <div id="wrapper">
@@ -263,16 +265,16 @@
                             <!-- /input-group -->
                         </li>
                         <li>
-                            <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                            <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> داشبورد</a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Charts<i class="fa arrow"></i></a>
+                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> ویرایش اطلاعات<i class="fa arrow"></i></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="flot.html">Flot Charts</a>
+                                    <a href="/Admin/InsuranceInformations/vehicles">وسایل نقلیه</a>
                                 </li>
                                 <li>
-                                    <a href="morris.html">Morris.js Charts</a>
+                                    <a href="#">پوشش مالی</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
@@ -364,13 +366,17 @@
     <script src="~/js/jquery-1.10.2.js"></script>
     <script src="~/js/bootstrap.min.js"></script>
 
-    <script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
-    <script src="js/plugins/morris/raphael-2.1.0.min.js"></script>
-    <script src="js/plugins/morris/morris.js"></script>
-    <script src="js/sb-admin.js"></script>
-    <script src="js/demo/dashboard-demo.js"></script>
 
+    <script src="~/js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="~/js/sb-admin.js"></script>
 
+    <script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('#myTable').DataTable();
+        });
+    </script>
 
 
 </body>

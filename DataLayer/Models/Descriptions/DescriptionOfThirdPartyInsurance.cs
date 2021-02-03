@@ -74,6 +74,17 @@ namespace DataLayer.Models.Descriptions
         [Required(ErrorMessage = "لطفا {0} را وارد کنيد ")]
         public bool TowTruckCar { get; set; }
 
+        [Display(Name = "وزن")]
+        public float Weight { get; set; }
+
+        [Display(Name = "تاریخ شروع بیمه نامه سال قبل")]
+        [Required(ErrorMessage = "لطفا {0} را وارد کنيد ")]
+        public string PreviousInsurancePolicyStartDate { get; set; }
+
+        [Display(Name = "تاریخ پایان بیمه نامه سال قبل")]
+        [Required(ErrorMessage = "لطفا {0} را وارد کنيد ")]
+        public string PreviousInsurancePolicyEndDate { get; set; }
+
         public int CarThirdPartyInsuranceFinancialCoverageID { get; set; }
 
 

@@ -4,6 +4,12 @@
     ViewData["Title"] = "CarThirdPartyInsurance";
     Layout = "_Layout";
 }
+
+
+<link href="~/css/persian-datepicker.css" rel="stylesheet" />
+<script src="~/js/persian-datepicker.js"></script>
+
+
 <style>
 
     #main {
@@ -22,24 +28,37 @@
         color: #fff;
         margin-top: 5%;
     }
-</style>
-<script>
-    function showCar() {
-        var x = document.getElementById("car");
-        if (x.style.display === "none") {
-            x.style.display = "block";
-        } else {
-            x.style.display = "none";
-        }
-    }
-</script>
 
+    .bs-searchbox .form-control {
+        width: 95%;
+        margin: 0 5px 0 5px;
+    }
+
+    .dropdown-menu {
+        text-align: right;
+    }
+
+    .bootstrap-select .dropdown-toggle .filter-option {
+        text-align: right;
+    }
+
+    :not(.input-group) > .bootstrap-select.form-control:not([class*="col-"]) {
+        border: 1px solid #ccc;
+    }
+</style>
+
+<script type="text/javascript">
+    $(function () {
+        // حالت پیشفرض
+        $('#datepicker0').datepicker();
+    });
+</script>
 
 <div id="main" class="container">
     <div id="formheader" class="card-header text-center">
         <h2>بيمه شخص ثالث</h2>
     </div>
-
+    <div><input type="text" id="datepicker0" /></div>
     <div id="car" class="form-group" style="padding-top:3%">
         <div class="col-md-12">
 
@@ -54,8 +73,8 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     @* <label asp-for="DescriptionOfThirdPartyInsurance.CarEngineNumber" class="control-label"></label>*@
-                                    <input asp-for="DescriptionOfThirdPartyInsurance.CarEngineNumber" placeholder="تاریخ شروع بیمه نامه سال قبل" class="form-control" />
-                                    <span asp-validation-for="DescriptionOfThirdPartyInsurance.CarEngineNumber" class="text-danger"></span>
+                                    <input id="datepicker0" asp-for="DescriptionOfThirdPartyInsurance.PreviousInsurancePolicyStartDate" placeholder="تاریخ شروع بیمه نامه سال قبل" class="form-control" />
+                                    <span asp-validation-for="DescriptionOfThirdPartyInsurance.PreviousInsurancePolicyStartDate" class="text-danger"></span>
                                 </div>
                             </div>
                         </div>
@@ -66,8 +85,8 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     @* <label asp-for="DescriptionOfThirdPartyInsurance.CarEngineNumber" class="control-label"></label>*@
-                                    <input asp-for="DescriptionOfThirdPartyInsurance.CarEngineNumber" placeholder="تاریخ پایان بیمه نامه سال قبل" class="form-control" />
-                                    <span asp-validation-for="DescriptionOfThirdPartyInsurance.CarEngineNumber" class="text-danger"></span>
+                                    <input id="datepicker0" asp-for="DescriptionOfThirdPartyInsurance.PreviousInsurancePolicyEndDate" placeholder="تاریخ پایان بیمه نامه سال قبل" class="form-control" />
+                                    <span asp-validation-for="DescriptionOfThirdPartyInsurance.PreviousInsurancePolicyEndDate" class="text-danger"></span>
                                 </div>
                             </div>
                         </div>
@@ -94,19 +113,29 @@
                     </div>
 
                     <div class="col-md-4">
-                        <div class="form-group">
-                            @* <label asp-for="DescriptionOfThirdPartyInsurance.TypeOfCar" class="control-label"></label>*@
-                            <select asp-for="DescriptionOfThirdPartyInsurance.CarType" class="form-control">
+
+                        @* <label asp-for="DescriptionOfThirdPartyInsurance.TypeOfCar" class="control-label"></label>*@
+                        @*<input type="text" id="search" name="search" style="margin: 10px;width: 165px;" onkeyup="filter(this.value)">
+                            <select id="select" asp-for="DescriptionOfThirdPartyInsurance.CarType" class="form-control">
                                 <option disabled selected hidden>نوع وسیله نقلیه</option>
                                 <option>1 ماشین</option>
                                 <option>2 ماشین</option>
                                 <option>3 ماشین</option>
                                 <option>4 ماشین</option>
-                            </select>
-                            <span asp-validation-for="DescriptionOfThirdPartyInsurance.CarType" class="text-danger"></span>
-                        </div>
-                    </div>
+                            </select>*@
 
+                        <!-- /.box-header -->
+
+                        <select asp-for="DescriptionOfThirdPartyInsurance.CarType" data-live-search="true" class="selectpicker form-control form-direction">
+                            <option disabled selected>نوع وسیله نقلیه</option>
+                            <option>1 ماشین</option>
+                            <option>2 ماشین</option>
+                            <option>3 ماشین</option>
+                            <option>4 ماشین</option>
+                        </select>
+                        <span asp-validation-for="DescriptionOfThirdPartyInsurance.CarType" class="text-danger"></span>
+
+                    </div>
                     <div class="col-md-4">
                         <div class="form-group">
                             @*  <label asp-for="DescriptionOfThirdPartyInsurance.CarModel" class="control-label"></label>*@
@@ -129,6 +158,7 @@
 
 
                 </div>
+
                 <hr />
 
 
@@ -244,7 +274,7 @@
 
 
 
-@*modal*@
+<!--Modal-->
 <div class="modal fade" id="logoutModal" tabindex="-1" aria-labelledby="exampleModalLabel"
      aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -263,13 +293,13 @@
                         <input type="submit" value="ادامه" class="btn btn-block btn-success" />
                     </a>
                 </div>
-               
+
 
             </div>
         </div>
     </div>
 </div>
-@*modal*@
+<!--EndModal-->
 
 
 @section Scripts {

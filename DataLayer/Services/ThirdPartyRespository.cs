@@ -93,5 +93,10 @@ namespace DataLayer.Services
         {
             return _context.CarTypes.Select(n => n.CarName).Where(c=>c.Contains(name));
         }
+
+        public IEnumerable<Car> ShowAllCars()
+        {
+            return _context.CarTypes;
+        }
     }
 }

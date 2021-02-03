@@ -10,12 +10,8 @@ namespace RahAsod.Pages.TypesOfInsurancePages.GetInformationForRating
 {
     public class CarThirdPartyRatingModel : PageModel
     {
-        private readonly DataLayer.Context.InsuranceContext _context;
-
-        public CarThirdPartyRatingModel(DataLayer.Context.InsuranceContext context)
-        {
-            
-        }
+      
+       
         public IActionResult OnGet()
         {
             return Page();
@@ -26,15 +22,15 @@ namespace RahAsod.Pages.TypesOfInsurancePages.GetInformationForRating
 
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://aka.ms/RazorPagesCRUD.
-        public async Task<IActionResult> OnPostAsync()
+        public IActionResult OnPostAsync()
         {
             if (!ModelState.IsValid)
             {
                 return Page();
             }
 
-            _context.ThirdPartyInsurance.Add(DescriptionOfThirdPartyInsurance);
-            await _context.SaveChangesAsync();
+ 
+       
 
             return RedirectToPage("./Index");
         }

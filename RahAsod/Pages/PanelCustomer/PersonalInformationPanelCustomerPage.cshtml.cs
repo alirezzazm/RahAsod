@@ -31,7 +31,7 @@ namespace RahAsod.Pages.PanelCustomer
             //}
 
             //_context.CustomerRegisteration.Add(RegisterCustomer);
-            //await _context.SaveChangesAsync();
+           await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");
         }

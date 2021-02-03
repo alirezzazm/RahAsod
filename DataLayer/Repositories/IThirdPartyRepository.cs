@@ -8,14 +8,22 @@ namespace DataLayer.Repositories
 {
     public interface IThirdPartyRepository :IDisposable
     {
+        //ThirdParty
         bool AddNewThirdParty(DescriptionOfThirdPartyInsurance thirdparty);
         bool UpdateThirdParty(DescriptionOfThirdPartyInsurance thirdparty);
         bool DeleteThirdparty(DescriptionOfThirdPartyInsurance thirdparty);
 
         IEnumerable<DescriptionOfThirdPartyInsurance> ShowAllThirdparty();
 
+        //Cars
         bool AddNewCar(Car newcar);
         IEnumerable<string> ShowCarNames(string name);
+        IEnumerable<Car> ShowAllCars();
+
+
+
+
+
 
         void Save();
     }
