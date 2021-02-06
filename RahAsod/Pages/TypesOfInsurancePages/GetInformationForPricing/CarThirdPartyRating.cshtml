@@ -6,8 +6,7 @@
 }
 
 
-<link href="~/css/persian-datepicker.css" rel="stylesheet" />
-<script src="~/js/persian-datepicker.js"></script>
+
 
 
 <style>
@@ -47,35 +46,51 @@
     }
 </style>
 
-<script type="text/javascript">
+<script>
     $(function () {
-        // حالت پیشفرض
-        $('#datepicker0').datepicker();
+        //themes
+        $(".datepicker").persianDatepicker();
+
+        $("#inlineRadio1, #inlineRadio2").change(function () {
+            if ($("#inlineRadio1").is(":checked")) {
+                $('#hoghoghi').show();
+            }
+            else
+                $('#hoghoghi').hide();
+        });
     });
 </script>
-
 <div id="main" class="container">
     <div id="formheader" class="card-header text-center">
         <h2>بيمه شخص ثالث</h2>
     </div>
-    <div><input type="text" id="datepicker0" /></div>
+
     <div id="car" class="form-group" style="padding-top:3%">
         <div class="col-md-12">
+            <div class="row">
+                <div class="form-check form-check-inline form-group">
+                    <input class="form-check-input" checked type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                    <label class="form-check-label" for="inlineRadio1">حقيقي</label>
+                </div>
+                <div class="form-check form-check-inline form-group">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                    <label class="form-check-label" for="inlineRadio2">حقوقي</label>
+                </div>
+            </div>
 
-            <br />
-            <br />
-            <form method="post">
 
+            <form method="post" id="hoghoghi">
+
+                <br />
+                <br />
                 <div class="row">
 
                     <div class="col-md-6">
                         <div class="form-group">
                             <div class="col-md-6">
-                                <div class="form-group">
-                                    @* <label asp-for="DescriptionOfThirdPartyInsurance.CarEngineNumber" class="control-label"></label>*@
-                                    <input id="datepicker0" asp-for="DescriptionOfThirdPartyInsurance.PreviousInsurancePolicyStartDate" placeholder="تاریخ شروع بیمه نامه سال قبل" class="form-control" />
-                                    <span asp-validation-for="DescriptionOfThirdPartyInsurance.PreviousInsurancePolicyStartDate" class="text-danger"></span>
-                                </div>
+                                @* <label asp-for="DescriptionOfThirdPartyInsurance.CarEngineNumber" class="control-label"></label>*@
+                                <input type="text" asp-for="DescriptionOfThirdPartyInsurance.PreviousInsurancePolicyStartDate" placeholder="تاریخ شروع بیمه نامه سال قبل" class="datepicker form-control" />
+                                <span asp-validation-for="DescriptionOfThirdPartyInsurance.PreviousInsurancePolicyStartDate" class="text-danger"></span>
                             </div>
                         </div>
                     </div>
@@ -83,11 +98,9 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <div class="col-md-6">
-                                <div class="form-group">
-                                    @* <label asp-for="DescriptionOfThirdPartyInsurance.CarEngineNumber" class="control-label"></label>*@
-                                    <input id="datepicker0" asp-for="DescriptionOfThirdPartyInsurance.PreviousInsurancePolicyEndDate" placeholder="تاریخ پایان بیمه نامه سال قبل" class="form-control" />
-                                    <span asp-validation-for="DescriptionOfThirdPartyInsurance.PreviousInsurancePolicyEndDate" class="text-danger"></span>
-                                </div>
+                                @* <label asp-for="DescriptionOfThirdPartyInsurance.CarEngineNumber" class="control-label"></label>*@
+                                <input type="text" asp-for="DescriptionOfThirdPartyInsurance.PreviousInsurancePolicyEndDate" placeholder="تاریخ پایان بیمه نامه سال قبل" class="datepicker form-control" />
+                                <span asp-validation-for="DescriptionOfThirdPartyInsurance.PreviousInsurancePolicyEndDate" class="text-danger"></span>
                             </div>
                         </div>
                     </div>
@@ -128,10 +141,10 @@
 
                         <select asp-for="DescriptionOfThirdPartyInsurance.CarType" data-live-search="true" class="selectpicker form-control form-direction">
                             <option disabled selected>نوع وسیله نقلیه</option>
-                            <option>1 ماشین</option>
-                            <option>2 ماشین</option>
-                            <option>3 ماشین</option>
-                            <option>4 ماشین</option>
+                            @foreach (var items in Model.carNames)
+                            {
+                                <option>@items</option>
+                            }
                         </select>
                         <span asp-validation-for="DescriptionOfThirdPartyInsurance.CarType" class="text-danger"></span>
 
@@ -268,6 +281,8 @@
             </form>
         </div>
     </div>
+
+
 
 </div>
 

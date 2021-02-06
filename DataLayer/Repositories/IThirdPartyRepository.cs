@@ -17,7 +17,7 @@ namespace DataLayer.Repositories
 
         //Cars
         bool AddNewCar(Car newcar);
-        IEnumerable<string> ShowCarNames(string name);
+        IEnumerable<string> ShowCarNames();
         IEnumerable<Car> ShowAllCars();
 
 
