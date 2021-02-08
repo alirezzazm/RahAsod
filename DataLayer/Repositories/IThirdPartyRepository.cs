@@ -20,11 +20,13 @@ namespace DataLayer.Repositories
         IEnumerable<string> ShowCarNames();
         IEnumerable<Car> ShowAllCars();
 
-
-
+        //FinancialCoverage
+        bool AddFinancialCoverage(CarFinancialCoverage financialCoverage);
+        IEnumerable<CarFinancialCoverage> ShowFinancialCoverages();
 
 
 
         void Save();
+        void SaveAsync();
     }
 }

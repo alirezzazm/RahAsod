@@ -72,6 +72,11 @@ namespace DataLayer.Services
             _context.SaveChanges();
         }
 
+        public void SaveAsync()
+        {
+            _context.SaveChangesAsync();
+        }
+
         public void Dispose()
         {
             _context.Dispose();
@@ -98,5 +103,25 @@ namespace DataLayer.Services
         {
             return _context.CarTypes;
         }
+
+        public bool AddFinancialCoverage(CarFinancialCoverage financialCoverage)
+        {
+            try
+            {
+                _context.Add(financialCoverage);
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        public IEnumerable<CarFinancialCoverage> ShowFinancialCoverages()
+        {
+            return _context.CarFinancialCoverages;
+        }
+
+
     }
 }

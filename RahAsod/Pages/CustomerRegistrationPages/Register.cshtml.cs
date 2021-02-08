@@ -32,8 +32,6 @@ namespace RahAsod.Pages.CustomerRegistrationPages
 
 
 
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for
-        // more details, see https://aka.ms/RazorPagesCRUD.
         public async Task<IActionResult> OnPost()
         {
             if (ModelState.IsValid)
@@ -49,6 +47,9 @@ namespace RahAsod.Pages.CustomerRegistrationPages
                     HomeNumber = model.HomeNumber,
                     Email = model.Email,
                     Address = model.Address,
+                    CustomerBirthday = model.CustomerBirthday,
+                    CustomerType = model.CustomerType,
+                    CustomerEconomicCode = model.CustomerEconomicCode
                 };
                 var result = await _userManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
