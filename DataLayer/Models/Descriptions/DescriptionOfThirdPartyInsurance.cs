@@ -85,6 +85,13 @@ namespace DataLayer.Models.Descriptions
         [Required(ErrorMessage = "لطفا {0} را وارد کنيد ")]
         public string PreviousInsurancePolicyEndDate { get; set; }
 
+
+        [Display(Name = "خسارت مالی")]
+        public bool FinancialDamage { get; set; }
+
+        [Display(Name = "خسارت جانی")]
+        public bool PersonalDamage { get; set; }
+
         public int CarThirdPartyInsuranceFinancialCoverageID { get; set; }
 
 

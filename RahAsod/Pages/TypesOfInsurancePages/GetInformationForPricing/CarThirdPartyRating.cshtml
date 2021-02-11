@@ -6,25 +6,24 @@
 }
 
 
-
-
-
 <style>
 
     #main {
-        padding: 2% 5%;
+        padding: 2% 1%;
         background-color: white;
         direction: rtl;
-        text-align: right
+        text-align: right;
     }
 
     body {
         background-color: #67B0D1CC;
+        margin: 9% auto;
+        width: 60%;
     }
 
     #formheader {
-        background-color: #0c2d48;
-        color: #fff;
+        /*background-color: #0c2d48;*/
+        /*color: #fff;*/
         margin-top: 5%;
     }
 
@@ -46,239 +45,220 @@
     }
 </style>
 
-<script>
-    $(function () {
-        //themes
-        $(".datepicker").persianDatepicker();
 
-        $("#inlineRadio1, #inlineRadio2").change(function () {
-            if ($("#inlineRadio1").is(":checked")) {
-                $('#hoghoghi').show();
-            }
-            else
-                $('#hoghoghi').hide();
-        });
-    });
-</script>
-<div id="main" class="container">
-    <div id="formheader" class="card-header text-center">
+
+
+<div id="main" class="container shadow-lg form-direction">
+    <div id="formheader" class="text-center">
         <h2>بيمه شخص ثالث</h2>
     </div>
+    <div class="row">
 
-    <div id="car" class="form-group" style="padding-top:3%">
+        @*<div class="col-md-3" style="border:1px solid red; width:100%;height:auto;background-color:lemonchiffon;max-width:50%">salam</div>*@
         <div class="col-md-12">
-            <div class="row">
-                <div class="form-check form-check-inline form-group">
-                    <input class="form-check-input" checked type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-                    <label class="form-check-label" for="inlineRadio1">حقيقي</label>
-                </div>
-                <div class="form-check form-check-inline form-group">
-                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-                    <label class="form-check-label" for="inlineRadio2">حقوقي</label>
+            <div id="car" class="form-group" style="padding-top:3%">
+                <div class="col-md-12">
+                    <div class="row">
+                        @*<div class="form-check form-check-inline form-group">
+                                <input class="form-check-input" checked type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                                <label class="form-check-label" for="inlineRadio1">حقيقي</label>
+                            </div>
+                            <div class="form-check form-check-inline form-group">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                                <label class="form-check-label" for="inlineRadio2">حقوقي</label>
+                            </div>*@
+                    </div>
+
+
+                    <form method="post" id="hoghoghi">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    @* <label asp-for="DescriptionOfThirdPartyInsurance.CarEngineNumber" class="control-label"></label>*@
+                                    <input type="text" asp-for="DescriptionOfThirdPartyInsurance.PreviousInsurancePolicyStartDate" placeholder="تاریخ شروع بیمه نامه سال قبل" class="pdpDefault form-control" />
+                                    <span asp-validation-for="DescriptionOfThirdPartyInsurance.PreviousInsurancePolicyStartDate" class="text-danger"></span>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    @* <label asp-for="DescriptionOfThirdPartyInsurance.CarEngineNumber" class="control-label"></label>*@
+                                    <input type="text" asp-for="DescriptionOfThirdPartyInsurance.PreviousInsurancePolicyEndDate" placeholder="تاریخ پایان بیمه نامه سال قبل" class="pdpDefault form-control" />
+                                    <span asp-validation-for="DescriptionOfThirdPartyInsurance.PreviousInsurancePolicyEndDate" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <hr />
+
+                        <div class="row">
+                            <div class="col-md-4">
+
+                                <select asp-for="DescriptionOfThirdPartyInsurance.CarThirdPartyInsuranceFinancialCoverageID" class="form-control">
+                                    <option disabled selected>پوشش مالی را انتخاب کنید</option>
+                                    <option>1 پوشش مالی</option>
+                                    <option>2 پوشش مالی</option>
+                                    <option>3 پوشش مالی</option>
+                                    <option>4 پوشش مالی</option>
+                                </select>
+                                <span asp-validation-for="DescriptionOfThirdPartyInsurance.CarThirdPartyInsuranceFinancialCoverageID" class="text-danger"></span>
+                            </div>
+
+                            <div class="col-md-4">
+
+                                @* <label asp-for="DescriptionOfThirdPartyInsurance.TypeOfCar" class="control-label"></label>*@
+                                @*<input type="text" id="search" name="search" style="margin: 10px;width: 165px;" onkeyup="filter(this.value)">
+                                    <select id="select" asp-for="DescriptionOfThirdPartyInsurance.CarType" class="form-control">
+                                        <option disabled selected hidden>نوع وسیله نقلیه</option>
+                                        <option>1 ماشین</option>
+                                        <option>2 ماشین</option>
+                                        <option>3 ماشین</option>
+                                        <option>4 ماشین</option>
+                                    </select>*@
+
+                                <!-- /.box-header -->
+
+                                <select asp-for="DescriptionOfThirdPartyInsurance.CarType" data-live-search="true" class="selectpicker form-control form-direction">
+                                    <option disabled selected>نوع وسیله نقلیه</option>
+                                    @foreach (var items in Model.carNames)
+                                    {
+                                        <option>@items</option>
+                                    }
+                                </select>
+                                <span asp-validation-for="DescriptionOfThirdPartyInsurance.CarType" class="text-danger"></span>
+
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    @*  <label asp-for="DescriptionOfThirdPartyInsurance.CarModel" class="control-label"></label>*@
+                                    <select asp-for="DescriptionOfThirdPartyInsurance.CarModel" class="form-control">
+                                        <option disabled selected hidden>مدل</option>
+                                        <option>1399</option>
+                                        <option>1398</option>
+                                        <option>1397</option>
+                                        <option>1396</option>
+                                        <option>1395</option>
+                                        <option>1394</option>
+                                        <option>1393</option>
+                                        <option>1392</option>
+                                        <option>1391</option>
+                                        <option>1390</option>
+                                    </select>
+                                    <span asp-validation-for="DescriptionOfThirdPartyInsurance.CarModel" class="text-danger"></span>
+                                </div>
+                            </div>
+
+
+                        </div>
+
+                        <hr />
+
+
+
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    @*  <label asp-for="DescriptionOfThirdPartyInsurance.DriverDiscountPercentage" class="control-label"></label>*@
+                                    <select asp-for="DescriptionOfThirdPartyInsurance.DriverDiscountPercentage" class="form-control">
+                                        <option disabled selected hidden>درصد تخفیف راننده</option>
+                                        <option>صفر درصد</option>
+                                        <option>پنج درصد</option>
+                                        <option>ده درصد</option>
+                                        <option>پانزده درصد</option>
+                                        <option>بیست درصد</option>
+                                        <option>بیست و پنج درصد</option>
+                                        <option>سی  درصد</option>
+                                        <option>سی و پنج درصد</option>
+                                        <option>چهل درصد</option>
+                                        <option>چهل و پنج درصد</option>
+                                        <option>پنجاه درصد</option>
+                                        <option>پنجاه و پنج درصد</option>
+                                        <option>شصت درصد</option>
+                                        <option>شصت و پنج درصد</option>
+                                        <option>هفتاد درصد</option>
+                                    </select>
+                                    <span asp-validation-for="DescriptionOfThirdPartyInsurance.DriverDiscountPercentage" class="text-danger"></span>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    @*     <label asp-for="DescriptionOfThirdPartyInsurance.PercentageOfInsuranceDiscount" class="control-label"></label>*@
+                                    <select asp-for="DescriptionOfThirdPartyInsurance.PolicyDicountPercantage" class="form-control">
+                                        <option disabled selected hidden> درصد تخفیف بیمه نامه</option>
+                                        <option>صفر درصد</option>
+                                        <option>پنج درصد</option>
+                                        <option>ده درصد</option>
+                                        <option>پانزده درصد</option>
+                                        <option>بیست درصد</option>
+                                        <option>بیست و پنج درصد</option>
+                                        <option>سی  درصد</option>
+                                        <option>سی و پنج درصد</option>
+                                        <option>چهل درصد</option>
+                                        <option>چهل و پنج درصد</option>
+                                        <option>پنجاه درصد</option>
+                                        <option>پنجاه و پنج درصد</option>
+                                        <option>شصت درصد</option>
+                                        <option>شصت و پنج درصد</option>
+                                        <option>هفتاد درصد</option>
+                                    </select>
+                                    <span asp-validation-for="DescriptionOfThirdPartyInsurance.PolicyDicountPercantage" class="text-danger"></span>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    @*    <label asp-for="DescriptionOfThirdPartyInsurance.CarCapacity" class="control-label"></label>*@
+                                    <select asp-for="DescriptionOfThirdPartyInsurance.CarCapacity" class="form-control">
+                                        <option disabled selected hidden> ظرفيت</option>
+                                        <option>يک</option>
+                                        <option>دو</option>
+                                        <option>چهار</option>
+                                        <option>پنج</option>
+                                        <option>يازده</option>
+                                        <option>بيست و دو</option>
+                                        <option>بيست و شش</option>
+                                        <option>سي و دو</option>
+                                        <option>سي و چهار</option>
+                                    </select>
+                                    <span asp-validation-for="DescriptionOfThirdPartyInsurance.CarCapacity" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+
+                            <div class="form-group col-md-2">
+                                @*   <label asp-for="DescriptionOfThirdPartyInsurance.UsedCar" class="control-label"></label>*@
+                                <select asp-for="DescriptionOfThirdPartyInsurance.CarUsage" class="form-control">
+                                    <option disabled selected hidden> مورد استفاده</option>
+                                    <option>شخصي</option>
+                                    <option>تاکسي</option>
+                                    <option>درون شهري</option>
+                                    <option>برون شهري</option>
+                                </select>
+                                <span asp-validation-for="DescriptionOfThirdPartyInsurance.CarUsage" class="text-danger"></span>
+                            </div>
+                            @*<div class="form-group form-check col-md-3">
+                                    <label class="form-check-label">
+                                        @Html.DisplayNameFor(model => model.DescriptionOfThirdPartyInsurance.TowTruckCar)   <input class="form-check-input" asp-for="DescriptionOfThirdPartyInsurance.TowTruckCar" />
+                                    </label>
+                                </div>*@
+                        </div>
+
+                        <br />
+
+
+                        <div class="row">
+                            <div class="col-md-4"></div>
+                            <div class="form-group col-md-4">
+                                <a class="btn btn-block btn-primary" href="#" data-toggle="modal" data-target="#logoutModal">محاسبه</a>
+                            </div>
+                        </div>
+
+
+                    </form>
                 </div>
             </div>
-
-
-            <form method="post" id="hoghoghi">
-
-                <br />
-                <br />
-                <div class="row">
-
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <div class="col-md-6">
-                                @* <label asp-for="DescriptionOfThirdPartyInsurance.CarEngineNumber" class="control-label"></label>*@
-                                <input type="text" asp-for="DescriptionOfThirdPartyInsurance.PreviousInsurancePolicyStartDate" placeholder="تاریخ شروع بیمه نامه سال قبل" class="datepicker form-control" />
-                                <span asp-validation-for="DescriptionOfThirdPartyInsurance.PreviousInsurancePolicyStartDate" class="text-danger"></span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <div class="col-md-6">
-                                @* <label asp-for="DescriptionOfThirdPartyInsurance.CarEngineNumber" class="control-label"></label>*@
-                                <input type="text" asp-for="DescriptionOfThirdPartyInsurance.PreviousInsurancePolicyEndDate" placeholder="تاریخ پایان بیمه نامه سال قبل" class="datepicker form-control" />
-                                <span asp-validation-for="DescriptionOfThirdPartyInsurance.PreviousInsurancePolicyEndDate" class="text-danger"></span>
-                            </div>
-                        </div>
-                    </div>
-
-
-
-
-                </div>
-                <hr />
-
-
-                <div class="row">
-                    <div class="col-md-4">
-
-                        <select asp-for="DescriptionOfThirdPartyInsurance.CarThirdPartyInsuranceFinancialCoverageID" class="form-control">
-                            <option disabled selected>پوشش مالی را انتخاب کنید</option>
-                            <option>1 پوشش مالی</option>
-                            <option>2 پوشش مالی</option>
-                            <option>3 پوشش مالی</option>
-                            <option>4 پوشش مالی</option>
-                        </select>
-                        <span asp-validation-for="DescriptionOfThirdPartyInsurance.CarThirdPartyInsuranceFinancialCoverageID" class="text-danger"></span>
-                    </div>
-
-                    <div class="col-md-4">
-
-                        @* <label asp-for="DescriptionOfThirdPartyInsurance.TypeOfCar" class="control-label"></label>*@
-                        @*<input type="text" id="search" name="search" style="margin: 10px;width: 165px;" onkeyup="filter(this.value)">
-                            <select id="select" asp-for="DescriptionOfThirdPartyInsurance.CarType" class="form-control">
-                                <option disabled selected hidden>نوع وسیله نقلیه</option>
-                                <option>1 ماشین</option>
-                                <option>2 ماشین</option>
-                                <option>3 ماشین</option>
-                                <option>4 ماشین</option>
-                            </select>*@
-
-                        <!-- /.box-header -->
-
-                        <select asp-for="DescriptionOfThirdPartyInsurance.CarType" data-live-search="true" class="selectpicker form-control form-direction">
-                            <option disabled selected>نوع وسیله نقلیه</option>
-                            @foreach (var items in Model.carNames)
-                            {
-                                <option>@items</option>
-                            }
-                        </select>
-                        <span asp-validation-for="DescriptionOfThirdPartyInsurance.CarType" class="text-danger"></span>
-
-                    </div>
-                    <div class="col-md-4">
-                        <div class="form-group">
-                            @*  <label asp-for="DescriptionOfThirdPartyInsurance.CarModel" class="control-label"></label>*@
-                            <select asp-for="DescriptionOfThirdPartyInsurance.CarModel" class="form-control">
-                                <option disabled selected hidden>مدل</option>
-                                <option>1399</option>
-                                <option>1398</option>
-                                <option>1397</option>
-                                <option>1396</option>
-                                <option>1395</option>
-                                <option>1394</option>
-                                <option>1393</option>
-                                <option>1392</option>
-                                <option>1391</option>
-                                <option>1390</option>
-                            </select>
-                            <span asp-validation-for="DescriptionOfThirdPartyInsurance.CarModel" class="text-danger"></span>
-                        </div>
-                    </div>
-
-
-                </div>
-
-                <hr />
-
-
-
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="form-group">
-                            @*  <label asp-for="DescriptionOfThirdPartyInsurance.DriverDiscountPercentage" class="control-label"></label>*@
-                            <select asp-for="DescriptionOfThirdPartyInsurance.DriverDiscountPercentage" class="form-control">
-                                <option disabled selected hidden>درصد تخفیف راننده</option>
-                                <option>صفر درصد</option>
-                                <option>پنج درصد</option>
-                                <option>ده درصد</option>
-                                <option>پانزده درصد</option>
-                                <option>بیست درصد</option>
-                                <option>بیست و پنج درصد</option>
-                                <option>سی  درصد</option>
-                                <option>سی و پنج درصد</option>
-                                <option>چهل درصد</option>
-                                <option>چهل و پنج درصد</option>
-                                <option>پنجاه درصد</option>
-                                <option>پنجاه و پنج درصد</option>
-                                <option>شصت درصد</option>
-                                <option>شصت و پنج درصد</option>
-                                <option>هفتاد درصد</option>
-                            </select>
-                            <span asp-validation-for="DescriptionOfThirdPartyInsurance.DriverDiscountPercentage" class="text-danger"></span>
-                        </div>
-                    </div>
-
-                    <div class="col-md-4">
-                        <div class="form-group">
-                            @*     <label asp-for="DescriptionOfThirdPartyInsurance.PercentageOfInsuranceDiscount" class="control-label"></label>*@
-                            <select asp-for="DescriptionOfThirdPartyInsurance.PolicyDicountPercantage" class="form-control">
-                                <option disabled selected hidden> درصد تخفیف بیمه نامه</option>
-                                <option>صفر درصد</option>
-                                <option>پنج درصد</option>
-                                <option>ده درصد</option>
-                                <option>پانزده درصد</option>
-                                <option>بیست درصد</option>
-                                <option>بیست و پنج درصد</option>
-                                <option>سی  درصد</option>
-                                <option>سی و پنج درصد</option>
-                                <option>چهل درصد</option>
-                                <option>چهل و پنج درصد</option>
-                                <option>پنجاه درصد</option>
-                                <option>پنجاه و پنج درصد</option>
-                                <option>شصت درصد</option>
-                                <option>شصت و پنج درصد</option>
-                                <option>هفتاد درصد</option>
-                            </select>
-                            <span asp-validation-for="DescriptionOfThirdPartyInsurance.PolicyDicountPercantage" class="text-danger"></span>
-                        </div>
-                    </div>
-
-                    <div class="col-md-4">
-                        <div class="form-group">
-                            @*    <label asp-for="DescriptionOfThirdPartyInsurance.CarCapacity" class="control-label"></label>*@
-                            <select asp-for="DescriptionOfThirdPartyInsurance.CarCapacity" class="form-control">
-                                <option disabled selected hidden> ظرفيت</option>
-                                <option>يک</option>
-                                <option>دو</option>
-                                <option>چهار</option>
-                                <option>پنج</option>
-                                <option>يازده</option>
-                                <option>بيست و دو</option>
-                                <option>بيست و شش</option>
-                                <option>سي و دو</option>
-                                <option>سي و چهار</option>
-                            </select>
-                            <span asp-validation-for="DescriptionOfThirdPartyInsurance.CarCapacity" class="text-danger"></span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row">
-
-                    <div class="form-group col-md-2">
-                        @*   <label asp-for="DescriptionOfThirdPartyInsurance.UsedCar" class="control-label"></label>*@
-                        <select asp-for="DescriptionOfThirdPartyInsurance.CarUsage" class="form-control">
-                            <option disabled selected hidden> مورد استفاده</option>
-                            <option>شخصي</option>
-                            <option>تاکسي</option>
-                            <option>درون شهري</option>
-                            <option>برون شهري</option>
-                        </select>
-                        <span asp-validation-for="DescriptionOfThirdPartyInsurance.CarUsage" class="text-danger"></span>
-                    </div>
-                    <div class="form-group form-check col-md-3">
-                        <label class="form-check-label">
-                            @Html.DisplayNameFor(model => model.DescriptionOfThirdPartyInsurance.TowTruckCar)   <input class="form-check-input" asp-for="DescriptionOfThirdPartyInsurance.TowTruckCar" />
-                        </label>
-                    </div>
-                </div>
-
-                <br />
-
-
-                <div class="row">
-                    <div class="col-md-4"></div>
-                    <div class="form-group col-md-4">
-                        <input type="submit" value="محاسبه حق بیمه" class="btn btn-block btn-success" href="#" data-toggle="modal" data-target="#logoutModal" />
-                    </div>
-                </div>
-
-
-            </form>
         </div>
     </div>
 
@@ -295,7 +275,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">حق بیمه وسیله نقلیه شما</h5>
+                <h5 class="modal-title">حق بیمه وسیله نقلیه شما</h5>
                 <button class="close" type="button" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">×</span>
                 </button>
@@ -315,6 +295,22 @@
     </div>
 </div>
 <!--EndModal-->
+<script>
+    $(function () {
+        //themes
+        $(".pdpDefault").persianDatepicker();
+
+        //    $("#inlineRadio1, #inlineRadio2").change(function () {
+        //        if ($("#inlineRadio1").is(":checked")) {
+        //            $('#hoghoghi').show();
+        //        }
+        //        else
+        //            $('#hoghoghi').hide();
+        //    });
+    });
+
+</script>
+
 
 
 @section Scripts {

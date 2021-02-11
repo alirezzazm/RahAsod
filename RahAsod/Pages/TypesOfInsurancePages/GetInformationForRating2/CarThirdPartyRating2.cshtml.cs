@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using DataLayer.Models.Descriptions;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
@@ -10,6 +11,7 @@ namespace RahAsod.Pages.TypesOfInsurancePages.GetInformationForRating2
 {
     public class CarThirdPartyRating2Model : PageModel
     {
+
         private readonly DataLayer.Context.InsuranceContext _context;
         public CarThirdPartyRating2Model(DataLayer.Context.InsuranceContext context)
         {
@@ -19,7 +21,14 @@ namespace RahAsod.Pages.TypesOfInsurancePages.GetInformationForRating2
 
         public IActionResult OnGet()
         {
-            return Page();
+            if (!HttpContext.User.Identity.IsAuthenticated)
+            {
+                return Redirect("/CustomerRegistrationPages/LoginCustomerPage");
+            }
+            else
+            {
+                return Page();
+            }
         }
 
         [BindProperty]

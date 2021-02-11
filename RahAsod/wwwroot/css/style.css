@@ -32,7 +32,7 @@ body {
     background-color: #fff;
     background-clip: padding-box;
     border: 1px solid #d1d3e2;
-    border-radius: 1rem;
+    /*border-radius: 1rem;*/
     transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 @media (prefers-reduced-motion: reduce) {

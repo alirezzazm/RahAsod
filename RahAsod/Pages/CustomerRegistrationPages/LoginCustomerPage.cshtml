@@ -3,48 +3,46 @@
 @{
     Layout = "_Layout";
 }
-<div class="container form-direction">
-    <div class="card o-hidden border-0 shadow-lg my-5">
-        <div class="card-body p-0">
-            <!-- Nested Row within Card Body -->
-            <div class="row">
 
-                <div class="col-lg-12">
-                    <div class="p-5 ">
-                        <div class="text-center">
-                            <h1 class="h4 text-gray-900 mb-4">خوش آمدید</h1>
-                        </div>
-                        <div class="text-center">
-                            <h1 class="h4 text-gray-900 mb-4">@ViewData["ErrorMessage"]</h1>
-                        </div>
-                        <form class="user" method="post">
-                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
-                            <div class="form-group">
-                                <input type="text" asp-for="Loginmodel.NationalCode" class="form-control form-control-user text-center" placeholder="کد ملی">
-                                <span asp-validation-for="Loginmodel.NationalCode" class="text-danger"></span>
-                            </div>
-                            <div class="form-group">
-                                <input type="password" asp-for="Loginmodel.Password" class="form-control form-control-user text-center" placeholder="رمز عبور">
-                                <span asp-validation-for="Loginmodel.Password" class="text-danger"></span>
-                            </div>
+<link href="~/css/LoginForms/LoginStyles.css" rel="stylesheet" />
 
-                            <button type="submit" class="btn btn-user text-white text-center btn-block" style="background-color:#67B0D1CC;"> ورود </button>
-                               
-                           
-                        </form>
-                        <hr>
-                        <div class="text-center">
-                            <a class="small" href="forgot-password.html">رمز عبور را فراموش کردم</a>
-                        </div>
-                        <div class="text-center">
-                            <a class="small" href="Register">ثبت نام</a>
-                        </div>
-                    </div>
+
+<div class="container login-container">
+    <div class="row">
+        <div class="col-md-6 ads">
+            <picture>
+                <img src="~/img/bg-masthead3.png" class="img-responsive" />
+            </picture>
+
+        </div>
+        <div class="col-md-6 login-form">
+
+            <h3>ورود</h3>
+            <form method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                <div class="form-group">
+                    <input type="text" asp-for="Loginmodel.NationalCode" class="form-control form-control-user text-center" placeholder="کد ملی">
+                    <span asp-validation-for="Loginmodel.NationalCode" class="text-danger"></span>
                 </div>
-            </div>
+                <div class="form-group">
+                    <input type="password" asp-for="Loginmodel.Password" class="form-control form-control-user text-center" placeholder="رمز عبور">
+                    <span asp-validation-for="Loginmodel.Password" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary btn-lg btn-block"> ورود </button>
+                </div>
+                <br />
+                <hr />
+                <div class="form-group forget-password">
+                    <a class="small" href="/CustomerRegistrationPages/ForgetPassword">رمز عبور را فراموش کردم</a>
+                </div>
+                <div class="form-group forget-password">
+                    <a class="small" href="Register">ثبت نام</a>
+                </div>
+            </form>
+
         </div>
     </div>
-
 </div>
-

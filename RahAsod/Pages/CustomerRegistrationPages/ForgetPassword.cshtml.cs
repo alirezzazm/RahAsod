@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace RahAsod.Pages.CustomerRegistrationPages
 {
-    public class ForgotPasswordCustomerPageModel : PageModel
+    public class ForgetPasswordModel : PageModel
     {
         public void OnGet()
         {
