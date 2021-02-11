@@ -1,4 +1,4 @@
-﻿@page
+﻿@page "/Register"
 @model RahAsod.Pages.CustomerRegistrationPages.RegisterModel
 
 @{
@@ -38,15 +38,15 @@
 
             <h3>ثبت نام</h3>
             <form method="post">
-                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div asp-validation-summary="All" class="text-danger"></div>
 
                 <div class="form-group">
                     <div class="form-check form-check-inline">
-                        <input onchange="myFunction()" asp-for="model.CustomerType" class="form-check-input" type="radio" name="CustomerType" id="inlineRadio2" value="حقوقی">
+                        <input  class="form-check-input" type="radio" name="model.CustomerType" id="inlineRadio2" value="حقوقی" asp-for="model.CustomerType">
                         <label class="form-check-label" for="inlineRadio2">حقوقی</label>
                     </div>
                     <div class="form-check form-check-inline">
-                        <input checked asp-for="model.CustomerType" class="form-check-input" type="radio" name="CustomerType" id="inlineRadio1" value="حقیقی">
+                        <input checked class="form-check-input" type="radio" name="model.CustomerType" id="inlineRadio1" value="حقیقی" asp-for="model.CustomerType">
                         <label class="form-check-label" for="inlineRadio1">حقیقی</label>
                     </div>
 
@@ -88,11 +88,11 @@
                     <span asp-validation-for="model.Address" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <input type="password" class="form-control form-control-user text-center" placeholder="رمز" asp-for="model.Password" />
+                    <input type="password" class="form-control form-control-user text-center" placeholder="رمز عبور" asp-for="model.Password" />
                     <span asp-validation-for="model.Password" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <input type="password" class="form-control form-control-user text-center" placeholder="تکرار رمز" asp-for="model.ConfirmPassword" />
+                    <input type="password" class="form-control form-control-user text-center" placeholder="تکرار رمز عبور" asp-for="model.ConfirmPassword" />
                     <span asp-validation-for="model.ConfirmPassword" class="text-danger"></span>
                 </div>
 
@@ -102,10 +102,10 @@
                 <br />
                 <hr />
                 <div class="form-group forget-password">
-                    <a class="small" href="/CustomerRegistrationPages/LoginCustomerPage">!حساب دارید؟ وارد شوید</a>
+                    <a class="small" href="/Login">!حساب دارید؟ وارد شوید</a>
                 </div>
                 <div class="form-group forget-password">
-                    <a asp-page="/MainPage/HomePage">برگشت به صفحه اصلی</a>
+                    <a href="/MainPage">برگشت به صفحه اصلی</a>
                 </div>
             </form>
 

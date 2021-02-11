@@ -21,14 +21,14 @@ namespace RahAsod.Pages.TypesOfInsurancePages.GetInformationForRating2
 
         public IActionResult OnGet()
         {
-            if (!HttpContext.User.Identity.IsAuthenticated)
-            {
-                return Redirect("/CustomerRegistrationPages/LoginCustomerPage");
-            }
-            else
-            {
-                return Page();
-            }
+            //if (!HttpContext.User.Identity.IsAuthenticated)
+            //{
+            //    return Redirect("/CustomerRegistrationPages/LoginCustomerPage");
+            //}
+            //else
+            //{
+            return Page();
+            //}
         }
 
         [BindProperty]

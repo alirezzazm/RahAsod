@@ -63,13 +63,14 @@ namespace RahAsod
                 options.Lockout.AllowedForNewUsers = true;
 
             });
-        
+
 
 
             services.AddRazorPages()
             .AddRazorPagesOptions(options =>
              {
                  options.Conventions.AddPageRoute("/MainPage/HomePage", "");
+                 options.Conventions.AuthorizePage("/TypesOfInsurancePages/GetInformationForRating2/GetInformationForRating2");
              });
         }
 

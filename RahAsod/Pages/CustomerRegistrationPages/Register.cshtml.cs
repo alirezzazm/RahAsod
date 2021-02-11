@@ -34,8 +34,8 @@ namespace RahAsod.Pages.CustomerRegistrationPages
 
         public async Task<IActionResult> OnPost()
         {
-            if (ModelState.IsValid)
-            {
+            //if (ModelState.IsValid)
+            //{
 
                 var user = new RegisterCustomer()
                 {
@@ -64,7 +64,7 @@ namespace RahAsod.Pages.CustomerRegistrationPages
                         ModelState.AddModelError("", error.Description);
                     }
                 }
-            }
+            //}
 
             return Page();
 
