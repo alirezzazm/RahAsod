@@ -86,11 +86,8 @@ namespace DataLayer.Models.Descriptions
         public string PreviousInsurancePolicyEndDate { get; set; }
 
 
-        [Display(Name = "خسارت مالی")]
-        public bool FinancialDamage { get; set; }
-
-        [Display(Name = "خسارت جانی")]
-        public bool PersonalDamage { get; set; }
+        [Display(Name = "نوع خسارت")]
+        public string DamageType { get; set; }
 
         public int CarThirdPartyInsuranceFinancialCoverageID { get; set; }
 

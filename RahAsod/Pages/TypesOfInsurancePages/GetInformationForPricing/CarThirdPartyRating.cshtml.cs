@@ -30,7 +30,7 @@ namespace RahAsod.Pages.TypesOfInsurancePages.GetInformationForRating
         }
 
         [BindProperty]
-        public DescriptionOfThirdPartyInsurance DescriptionOfThirdPartyInsurance { get; set; }
+        public DescriptionOfThirdPartyInsurance thirdParty { get; set; }
         public IActionResult OnPostAsync()
         {
             if (!ModelState.IsValid)
