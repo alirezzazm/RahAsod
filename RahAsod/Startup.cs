@@ -65,7 +65,6 @@ namespace RahAsod
             });
 
 
-
             services.AddRazorPages()
             .AddRazorPagesOptions(options =>
              {

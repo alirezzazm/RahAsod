@@ -10,6 +10,7 @@
         $("#inlineRadio1, #inlineRadio2").change(function () {
             if ($("#inlineRadio2").is(":checked")) {
                 $("#nationalcodeInput").attr("placeholder", "شناسه ملی");
+                $("#adressInput").attr("placeholder", "آدرس");
                 $("#birthdayInput").attr("type", "hidden");
                 $("#economiccodeInput").attr("type", "text");
                 $("#economiccodeInput").prop("disabled", false);
@@ -18,6 +19,7 @@
                 $("#economiccodeInput").prop("disabled", true);
                 $("#economiccodeInput").attr("type", "hidden");
                 $("#nationalcodeInput").attr("placeholder", "کد ملی");
+                $("#adressInput").attr("placeholder", "آدرس منزل");
                 $("#birthdayInput").attr("type", "text");
             }
         });
@@ -84,7 +86,7 @@
                     <span asp-validation-for="model.Email" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control form-control-user text-center" placeholder="آدرس منزل" asp-for="model.Address" />
+                    <input id="adressInput" type="text" class="form-control form-control-user text-center" placeholder="آدرس منزل" asp-for="model.Address" />
                     <span asp-validation-for="model.Address" class="text-danger"></span>
                 </div>
                 <div class="form-group">
@@ -99,7 +101,7 @@
                 <div class="form-group">
                     <button type="submit" class="btn btn-primary btn-block"> ثبت نام</button>
                 </div>
-                <br />
+         
                 <hr />
                 <div class="form-group forget-password">
                     <a class="small" href="/Login">!حساب دارید؟ وارد شوید</a>

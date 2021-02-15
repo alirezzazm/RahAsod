@@ -1,4 +1,5 @@
 ﻿using DataLayer.Models;
+using DataLayer.Models.Admin;
 using DataLayer.Models.Conditions;
 using DataLayer.Models.Descriptions;
 using Microsoft.EntityFrameworkCore;
@@ -30,7 +31,9 @@ namespace DataLayer.Context
         public DbSet<DescriptionOfCustomerInsurance> DescriptionCustomerInsurances { get; set; }
         public DbSet<InsurancesOfCustomer> CustomerInsureances { get; set; }
         public DbSet<Car> CarTypes { get; set; }
-    
-        
+        //admin
+        public DbSet<Slider> SliderPics { get; set; }
+        public DbSet<OfficeInfo> OfficeInfos { get; set; }
+        public DbSet<Employee> Employees { get; set; }
     }
 }
