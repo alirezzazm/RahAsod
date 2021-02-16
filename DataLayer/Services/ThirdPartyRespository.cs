@@ -1,5 +1,6 @@
 ﻿using DataLayer.Context;
 using DataLayer.Models;
+using DataLayer.Models.Admin;
 using DataLayer.Models.Descriptions;
 using DataLayer.Repositories;
 using Microsoft.EntityFrameworkCore;
@@ -121,7 +122,6 @@ namespace DataLayer.Services
         {
             return _context.CarFinancialCoverages;
         }
-
-
+               
     }
 }

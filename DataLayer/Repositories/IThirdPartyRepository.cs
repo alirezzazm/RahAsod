@@ -1,4 +1,5 @@
 ﻿using DataLayer.Models;
+using DataLayer.Models.Admin;
 using DataLayer.Models.Descriptions;
 using System;
 using System.Collections.Generic;
@@ -6,7 +7,7 @@ using System.Text;
 
 namespace DataLayer.Repositories
 {
-    public interface IThirdPartyRepository :IDisposable
+    public interface IThirdPartyRepository : IDisposable
     {
         //ThirdParty
         bool AddNewThirdParty(DescriptionOfThirdPartyInsurance thirdparty);
@@ -23,8 +24,6 @@ namespace DataLayer.Repositories
         //FinancialCoverage
         bool AddFinancialCoverage(CarFinancialCoverage financialCoverage);
         IEnumerable<CarFinancialCoverage> ShowFinancialCoverages();
-
-
 
         void Save();
         void SaveAsync();

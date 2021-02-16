@@ -14,6 +14,10 @@ namespace DataLayer.Models.Admin
         [Required(ErrorMessage = "لطفا {0} را وارد کنيد ")]
         public string picPath { get; set; }
 
+        [Display(Name = "اسم عکس")]
+        [Required(ErrorMessage = "لطفا {0} را وارد کنيد ")]
+        public string picName { get; set; }
+
         [Display(Name = "نمايش داده شود ؟")]
         public bool show { get; set; }
     }
