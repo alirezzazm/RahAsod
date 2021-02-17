@@ -8,55 +8,55 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using DataLayer.Context;
 using DataLayer.Models.Admin;
+using DataLayer.Repositories;
+using DataLayer.Services;
 
 namespace RahAsod.Areas.Admin.Pages.SiteManagement.EmployeeChanges
 {
     public class EditModel : PageModel
     {
-        private readonly DataLayer.Context.InsuranceContext _context;
-
-        public EditModel(DataLayer.Context.InsuranceContext context)
+        private readonly IAdminRepository AdminRepository;
+        public EditModel(InsuranceContext context)
         {
-            _context = context;
+            AdminRepository = new AdminRepository(context);
         }
 
         [BindProperty]
-        public Employee Employee { get; set; }
+        public Employee employee { get; set; }
 
-        public async Task<IActionResult> OnGetAsync(int? id)
+        public IActionResult OnGet(int? id)
         {
             if (id == null)
             {
                 return NotFound();
             }
 
-            Employee = await _context.Employees.FirstOrDefaultAsync(m => m.Id == id);
+            employee = AdminRepository.GetEmployeeById(id.Value);
 
-            if (Employee == null)
+            if (employee == null)
             {
                 return NotFound();
             }
             return Page();
         }
 
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for
-        // more details, see https://aka.ms/RazorPagesCRUD.
-        public async Task<IActionResult> OnPostAsync()
+      
+        public IActionResult OnPost()
         {
             if (!ModelState.IsValid)
             {
                 return Page();
             }
 
-            _context.Attach(Employee).State = EntityState.Modified;
+            AdminRepository.EditEmployee(employee);
 
             try
             {
-                await _context.SaveChangesAsync();
+                AdminRepository.save();
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!EmployeeExists(Employee.Id))
+                if (!AdminRepository.EmployeeExists(employee.Id))
                 {
                     return NotFound();
                 }
@@ -69,9 +69,5 @@ namespace RahAsod.Areas.Admin.Pages.SiteManagement.EmployeeChanges
             return RedirectToPage("./Index");
         }
 
-        private bool EmployeeExists(int id)
-        {
-            return _context.Employees.Any(e => e.Id == id);
-        }
     }
 }

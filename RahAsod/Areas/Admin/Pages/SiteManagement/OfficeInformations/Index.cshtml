@@ -1,0 +1,71 @@
+﻿@page
+@model RahAsod.Areas.Admin.Pages.SiteManagement.OfficeInformations.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Pages/Shared/_AdminPanelLayout.cshtml";
+}
+
+<h1>Index</h1>
+
+<div id="page-wrapper">
+    <div class="row">
+        <div class="page-header">
+            <h3>اطلاعات شرکت</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="panel-body">
+            <div class="table-responsive">
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.info[0].adress)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.info[0].phoneNumber)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.info[0].email)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.info[0].instagram)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.info[0].description)
+                            </th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.info)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.adress)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.phoneNumber)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.email)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.instagram)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.description)
+                                </td>
+                                <td>
+                                    <a class="btn btn-warning btn-sm" asp-page="./Edit" asp-route-id="@item.Id"> ويرايش<i class="fa fa-pencil"></i></a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+</div>

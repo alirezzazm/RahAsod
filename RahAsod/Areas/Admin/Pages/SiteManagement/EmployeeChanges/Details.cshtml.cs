@@ -7,30 +7,31 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using DataLayer.Context;
 using DataLayer.Models.Admin;
+using DataLayer.Repositories;
+using DataLayer.Services;
 
 namespace RahAsod.Areas.Admin.Pages.SiteManagement.EmployeeChanges
 {
     public class DetailsModel : PageModel
     {
-        private readonly DataLayer.Context.InsuranceContext _context;
-
-        public DetailsModel(DataLayer.Context.InsuranceContext context)
+        private readonly IAdminRepository AdminRepository;
+        public DetailsModel(InsuranceContext context)
         {
-            _context = context;
+            AdminRepository = new AdminRepository(context);
         }
 
-        public Employee Employee { get; set; }
+        public Employee employee { get; set; }
 
-        public async Task<IActionResult> OnGetAsync(int? id)
+        public IActionResult OnGet(int? id)
         {
             if (id == null)
             {
                 return NotFound();
             }
 
-            Employee = await _context.Employees.FirstOrDefaultAsync(m => m.Id == id);
+            employee = AdminRepository.GetEmployeeById(id.Value);
 
-            if (Employee == null)
+            if (employee == null)
             {
                 return NotFound();
             }

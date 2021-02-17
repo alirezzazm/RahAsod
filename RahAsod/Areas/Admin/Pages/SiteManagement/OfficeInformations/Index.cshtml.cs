@@ -7,10 +7,10 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using DataLayer.Context;
 using DataLayer.Models.Admin;
-using DataLayer.Services;
 using DataLayer.Repositories;
+using DataLayer.Services;
 
-namespace RahAsod.Areas.Admin.Pages.SiteManagement.SliderPhoto
+namespace RahAsod.Areas.Admin.Pages.SiteManagement.OfficeInformations
 {
     public class IndexModel : PageModel
     {
@@ -20,11 +20,11 @@ namespace RahAsod.Areas.Admin.Pages.SiteManagement.SliderPhoto
             AdminRepository = new AdminRepository(context);
         }
 
-        public IEnumerable<Slider> slider { get;set; }
+        public IList<OfficeInfo> info { get;set; }
 
         public void OnGet()
         {
-            slider = AdminRepository.GetAllSliders();
+            info = AdminRepository.GetOfficeInfo();
         }
     }
 }

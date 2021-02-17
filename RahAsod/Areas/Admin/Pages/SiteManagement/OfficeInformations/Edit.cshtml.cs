@@ -11,7 +11,7 @@ using DataLayer.Models.Admin;
 using DataLayer.Repositories;
 using DataLayer.Services;
 
-namespace RahAsod.Areas.Admin.Pages.SiteManagement.SliderPhoto
+namespace RahAsod.Areas.Admin.Pages.SiteManagement.OfficeInformations
 {
     public class EditModel : PageModel
     {
@@ -22,7 +22,7 @@ namespace RahAsod.Areas.Admin.Pages.SiteManagement.SliderPhoto
         }
 
         [BindProperty]
-        public Slider model { get; set; }
+        public OfficeInfo info { get; set; }
 
         public IActionResult OnGet(int? id)
         {
@@ -31,15 +31,16 @@ namespace RahAsod.Areas.Admin.Pages.SiteManagement.SliderPhoto
                 return NotFound();
             }
 
-            model = AdminRepository.GetSliderById(id.Value);
+            info = AdminRepository.GetInfoById(id.Value);
 
-            if (model == null)
+            if (info == null)
             {
                 return NotFound();
             }
             return Page();
         }
 
+        
         public IActionResult OnPost()
         {
             if (!ModelState.IsValid)
@@ -47,8 +48,7 @@ namespace RahAsod.Areas.Admin.Pages.SiteManagement.SliderPhoto
                 return Page();
             }
 
-            AdminRepository.EditSlider(model);
-
+            AdminRepository.EditOfficeInfo(info);
 
             try
             {
@@ -56,7 +56,7 @@ namespace RahAsod.Areas.Admin.Pages.SiteManagement.SliderPhoto
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!AdminRepository.SliderExists(model.Id))
+                if (!AdminRepository.OfficeInfoExists(info.Id))
                 {
                     return NotFound();
                 }
@@ -69,6 +69,6 @@ namespace RahAsod.Areas.Admin.Pages.SiteManagement.SliderPhoto
             return RedirectToPage("./Index");
         }
 
-
+       
     }
 }

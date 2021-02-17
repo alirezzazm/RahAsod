@@ -1,0 +1,57 @@
+﻿@page
+@model RahAsod.Areas.Admin.Pages.SiteManagement.OfficeInformations.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Areas/Admin/Pages/Shared/_AdminPanelLayout.cshtml";
+}
+<div id="page-wrapper">
+    <h4>ويرايش</h4>
+
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="info.Id" />
+                <div class="form-group">
+                    <label asp-for="info.adress" class="control-label"></label>
+                    <input asp-for="info.adress" class="form-control" />
+                    <span asp-validation-for="info.adress" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="info.phoneNumber" class="control-label"></label>
+                    <input asp-for="info.phoneNumber" class="form-control" />
+                    <span asp-validation-for="info.phoneNumber" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="info.email" class="control-label"></label>
+                    <input asp-for="info.email" class="form-control" />
+                    <span asp-validation-for="info.email" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="info.instagram" class="control-label"></label>
+                    <input asp-for="info.instagram" class="form-control" />
+                    <span asp-validation-for="info.instagram" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="info.description" class="control-label"></label>
+                    <input asp-for="info.description" class="form-control" />
+                    <span asp-validation-for="info.description" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Save" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div>
+        <a asp-page="./Index">بازگشت</a>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

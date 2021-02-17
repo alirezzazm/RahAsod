@@ -7,16 +7,17 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using DataLayer.Context;
 using DataLayer.Models.Admin;
+using DataLayer.Repositories;
+using DataLayer.Services;
 
 namespace RahAsod.Areas.Admin.Pages.SiteManagement.EmployeeChanges
 {
     public class CreateModel : PageModel
     {
-        private readonly DataLayer.Context.InsuranceContext _context;
-
-        public CreateModel(DataLayer.Context.InsuranceContext context)
+        private readonly IAdminRepository AdminRepository;
+        public CreateModel(InsuranceContext context)
         {
-            _context = context;
+            AdminRepository = new AdminRepository(context);
         }
 
         public IActionResult OnGet()
@@ -25,19 +26,19 @@ namespace RahAsod.Areas.Admin.Pages.SiteManagement.EmployeeChanges
         }
 
         [BindProperty]
-        public Employee Employee { get; set; }
+        public Employee employee { get; set; }
 
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://aka.ms/RazorPagesCRUD.
-        public async Task<IActionResult> OnPostAsync()
+        public IActionResult OnPost()
         {
             if (!ModelState.IsValid)
             {
                 return Page();
             }
 
-            _context.Employees.Add(Employee);
-            await _context.SaveChangesAsync();
+            AdminRepository.AddEmployee(employee);
+            AdminRepository.save();
 
             return RedirectToPage("./Index");
         }
