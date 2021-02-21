@@ -15,16 +15,28 @@ namespace RahAsod.Areas.Admin.Pages.SiteManagement.SliderPhoto
     public class IndexModel : PageModel
     {
         private readonly IAdminRepository AdminRepository;
+        private readonly InsuranceContext _context;
         public IndexModel(InsuranceContext context)
         {
             AdminRepository = new AdminRepository(context);
+            _context = context;
         }
 
-        public IEnumerable<Slider> slider { get;set; }
-
-        public void OnGet()
+        [BindProperty]
+        public IEnumerable<Slider> slider { get; set; }
+        public async Task<IActionResult> OnGetAsync()
         {
-            slider = AdminRepository.GetAllSliders();
+            slider = await AdminRepository.GetAllSliders();
+            return Page();
+        }
+
+        [BindProperty]
+        public int sliderId { get; set; }
+        public async Task<IActionResult> OnPostAsync()
+        {
+            await AdminRepository.DeleteSlider(sliderId);
+            AdminRepository.save();
+            return RedirectToPage("./Index");
         }
     }
 }

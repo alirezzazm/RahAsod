@@ -41,7 +41,8 @@ namespace RahAsod.Areas.Admin.Pages.SiteManagement.SliderPhoto
                 string imgExtention = Path.GetExtension(formFile.FileName);
                 if (imgExtention == ".jpg" || imgExtention == ".png" || imgExtention == ".jpeg")
                 {
-                    var saveImagePath = Path.Combine(_webHostEnv.WebRootPath, "img", "Slider", formFile.FileName);
+                    string fileName = Guid.NewGuid() + "-" + formFile.FileName;
+                    var saveImagePath = Path.Combine(_webHostEnv.WebRootPath, "img", "Slider",fileName);
                     var stream = new FileStream(saveImagePath, FileMode.Create);
                     await formFile.CopyToAsync(stream);
                     var newPhoto = new Slider()

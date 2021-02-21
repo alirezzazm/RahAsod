@@ -23,11 +23,19 @@ namespace RahAsod.Areas.Admin.Pages.SiteManagement.EmployeeChanges
 
         public IEnumerable<Employee> employee { get;set; }
 
-        public void OnGet()
+        public async Task<IActionResult> OnGetAsync()
         {
-            employee = AdminRepository.GetAllEmployees();
+            employee = await AdminRepository.GetAllEmployees();
+            return Page();
         }
 
-
+        [BindProperty]
+        public int employeeId { get; set; }
+        public async Task<IActionResult> OnPostAsync()
+        {
+            await AdminRepository.DeleteEmployee(employeeId);
+            AdminRepository.save();
+            return RedirectToPage("./Index");
+        }
     }
 }

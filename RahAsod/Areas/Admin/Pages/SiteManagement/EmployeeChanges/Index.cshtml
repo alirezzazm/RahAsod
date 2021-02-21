@@ -30,10 +30,10 @@
                             <thead>
                                 <tr>
                                     <th>
-                                       نام و نام خانوادگي
+                                        نام و نام خانوادگي
                                     </th>
                                     <th>
-                                       سمت
+                                        سمت
                                     </th>
                                     <th></th>
                                 </tr>
@@ -50,8 +50,7 @@
                                         </td>
                                         <td>
                                             <a class="btn btn-warning btn-sm" asp-page="./Edit" asp-route-id="@item.Id"> ويرايش<i class="fa fa-pencil"></i></a>
-                                            <button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#ExitModal" asp-route-id="@item.Id"> حذف <i class="fa fa-trash-o"></i></button>
-                                            <a class="btn btn-info btn-sm" asp-page="./Details" asp-route-id="@item.Id"> جزئيات </a>
+                                            <button class="btn btn-danger btn-sm" onclick="passData(@item.Id)" data-toggle="modal" data-target="#ExitModal"> حذف <i class="fa fa-trash-o"></i></button>
                                         </td>
                                     </tr>
                                 }
@@ -89,6 +88,7 @@
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">انصراف</button>
                 <form method="post">
+                    <input id="selectedId" type="hidden" asp-for="employeeId" />
                     <button type="submit" class="btn btn-danger">حذف</button>
                 </form>
             </div>
@@ -96,3 +96,9 @@
     </div>
 </div>
 <!--EndModal-->
+
+<script>
+    function passData(id) {
+        document.getElementById("selectedId").setAttribute("value", id);
+    }
+</script>

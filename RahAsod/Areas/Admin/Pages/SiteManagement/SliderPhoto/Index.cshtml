@@ -22,10 +22,10 @@
                             عکس
                         </th>
                         <th>
-                            آدرس عکس
+                            نام عکس
                         </th>
                         <th>
-                           نمايش داده شود ؟
+                            نمايش داده شود ؟
                         </th>
                         <th></th>
                     </tr>
@@ -38,15 +38,14 @@
                                 <img src="~/img/Slider/@item.picName" class="img-responsive img-thumbnail" style="width:100px;height:100px;" />
                             </td>
                             <td>
-                                @Html.DisplayFor(modelItem => item.picPath)
+                                @Html.DisplayFor(modelItem => item.picName)
                             </td>
                             <td>
                                 @Html.DisplayFor(modelItem => item.show)
                             </td>
                             <td>
-                                <a class="btn btn-warning btn-sm" asp-page="./Edit" asp-route-id="@item.Id">ویرایش<i class="fa fa-pencil"></i></a> 
-                                <button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#ExitModal" asp-route-id="@item.Id">حذف <i class="fa fa-trash-o"></i></button>
-                                <a class="btn btn-info btn-sm" asp-page="./Details" asp-route-id="@item.Id">Details</a> 
+                                <a class="btn btn-warning btn-sm" asp-page="./Edit" asp-route-id="@item.Id">ویرایش<i class="fa fa-pencil"></i></a>
+                                <button id="modalButton" onclick="passData(@item.Id)" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#ExitModal">حذف <i class="fa fa-trash-o"></i></button>
                             </td>
                         </tr>
                     }
@@ -79,6 +78,7 @@
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">انصراف</button>
                 <form method="post">
+                    <input id="selectedId" type="hidden" asp-for="sliderId" />
                     <button type="submit" class="btn btn-danger">حذف</button>
                 </form>
             </div>
@@ -86,3 +86,8 @@
     </div>
 </div>
 <!--EndModal-->
+<script>
+    function passData(id) {
+        document.getElementById("selectedId").setAttribute("value", id);
+    }
+</script>

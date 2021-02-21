@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace DataLayer.Services
 {
@@ -19,9 +20,9 @@ namespace DataLayer.Services
 
 
         //Slider
-        public IEnumerable<Slider> GetAllSliders()
+        public async Task<IEnumerable<Slider>> GetAllSliders()
         {
-            return _context.SliderPics;
+            return await _context.SliderPics.ToListAsync();
         }
 
         public bool AddPhoto(Slider sliderPhoto)
@@ -58,8 +59,10 @@ namespace DataLayer.Services
                 return false;
             }
         }
-        public bool DeleteSlider(Slider slider)
+
+        public async Task<bool> DeleteSlider(int id)
         {
+            Slider slider = await _context.SliderPics.FindAsync(id);
             try
             {
                 _context.Entry(slider).State = EntityState.Deleted;
@@ -80,9 +83,9 @@ namespace DataLayer.Services
 
 
         //Employee
-        public IEnumerable<Employee> GetAllEmployees()
+        public async Task<IEnumerable<Employee>> GetAllEmployees()
         {
-            return _context.Employees;
+            return await _context.Employees.ToListAsync();
         }
 
         public bool AddEmployee(Employee employee)
@@ -121,8 +124,9 @@ namespace DataLayer.Services
             return _context.Employees.Any(e => e.Id == id);
         }
 
-        public bool DeleteEmployee(Employee employee)
+        public async Task<bool> DeleteEmployee(int id)
         {
+            Employee employee = await _context.Employees.FindAsync(id);
             try
             {
                 _context.Entry(employee).State = EntityState.Deleted;
@@ -179,6 +183,6 @@ namespace DataLayer.Services
             _context.SaveChanges();
         }
 
-       
+
     }
 }
