@@ -14,7 +14,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>@ViewData["Title"]</title>
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="~/css/site.css" />
     <link href="~/css/font-awesome.min.css" rel="stylesheet" />
 
 
@@ -86,10 +87,10 @@
                                     <a href="#">شرح بیمه نامه ها </a>
                                     <ul>
                                         <li> <a asp-page="/DescriptionOfInsurancePoliciesPages/CarThirdPartyPolicies">بیمه شخص ثالث</a></li>
-                                        <li><a  asp-page="/DescriptionOfInsurancePoliciesPages/LifePolicies">بیمه عمر</a></li>
-                                        <li><a  asp-page="/DescriptionOfInsurancePoliciesPages/LiabilityPolicies">بیمه مسئولیت</a></li>
-                                        <li><a  asp-page="/DescriptionOfInsurancePoliciesPages/FirePolicies">بیمه حریق</a></li>
-                                        <li><a  asp-page="/DescriptionOfInsurancePoliciesPages/BodyPolicies">بیمه بدنه</a></li>
+                                        <li><a asp-page="/DescriptionOfInsurancePoliciesPages/LifePolicies">بیمه عمر</a></li>
+                                        <li><a asp-page="/DescriptionOfInsurancePoliciesPages/LiabilityPolicies">بیمه مسئولیت</a></li>
+                                        <li><a asp-page="/DescriptionOfInsurancePoliciesPages/FirePolicies">بیمه حریق</a></li>
+                                        <li><a asp-page="/DescriptionOfInsurancePoliciesPages/BodyPolicies">بیمه بدنه</a></li>
                                     </ul>
                                 </li>
                                 <li><a href="#">Drop Down 3</a></li>
@@ -98,9 +99,6 @@
                             </ul>
                         </li>
                         <li><a href="#about">درباره ما</a></li>
-                        <li><a href="#services">خدمات</a></li>
-                        <li><a href="#portfolio">نمونه کارها</a></li>
-                        <li><a href="#team">تیم صدور بیمه نامه</a></li>
                         <li><a href="#contact">ارتباط با ما</a></li>
                         @if (_signInManager.IsSignedIn(User))
                         {

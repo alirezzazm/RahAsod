@@ -9,21 +9,34 @@ using DataLayer.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace RahAsod.Pages.DescriptionOfInsurancePoliciesPages
+namespace RahAsod.Areas.Admin.Pages.InsurancesDescription
 {
-    public class FirePoliciesModel : PageModel
+    public class FireDescriptionModel : PageModel
     {
         private readonly IAdminRepository AdminRepository;
-        public FirePoliciesModel(InsuranceContext context)
+
+        public FireDescriptionModel(InsuranceContext context)
         {
             AdminRepository = new AdminRepository(context);
         }
 
-        [BindProperty]
-        public IEnumerable<DescriptionTexts> desText { get; set; }
+       
         public IActionResult OnGet()
         {
-            desText = AdminRepository.GetFireTexts();
+          
+            return Page();
+        }
+
+        [BindProperty]
+        public DescriptionTexts model { get; set; }
+        public IActionResult OnPost()
+        {
+            if (ModelState.IsValid)
+            {
+                AdminRepository.AddDescription(model);
+                AdminRepository.save();
+
+            }
             return Page();
         }
     }

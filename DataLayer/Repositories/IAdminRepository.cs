@@ -19,7 +19,7 @@ namespace DataLayer.Repositories
 
 
         //Employee
-        Task<IEnumerable<Employee>> GetAllEmployees();
+        IEnumerable<Employee> GetAllEmployees();
         bool AddEmployee(Employee employee);
         Employee GetEmployeeById(int id);
         bool EditEmployee(Employee model);
@@ -32,6 +32,13 @@ namespace DataLayer.Repositories
         OfficeInfo GetInfoById(int id);
         bool OfficeInfoExists(int id);
 
+        //DescriptionText
+        bool AddDescription(DescriptionTexts text);
+        IEnumerable<DescriptionTexts> GetBodyTexts();
+        IEnumerable<DescriptionTexts> GetThirdPartyTexts();
+        IEnumerable<DescriptionTexts> GetLifeTexts();
+        IEnumerable<DescriptionTexts> GetFireTexts();
+        IEnumerable<DescriptionTexts> GetResponsibilityTexts();
 
         void save();
 

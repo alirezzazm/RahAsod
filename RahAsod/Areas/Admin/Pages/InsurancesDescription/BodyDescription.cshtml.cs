@@ -11,19 +11,19 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace RahAsod.Areas.Admin.Pages.InsurancesDescription
 {
-    public class ThirdpartyDescriptionModel : PageModel
+    public class BodyDescriptionModel : PageModel
     {
         private readonly IAdminRepository AdminRepository;
 
-        public ThirdpartyDescriptionModel(InsuranceContext context)
+        public BodyDescriptionModel(InsuranceContext context)
         {
             AdminRepository = new AdminRepository(context);
         }
 
-
+   
         public IActionResult OnGet()
         {
-          
+            //model = AdminRepository.GetBodyTexts().FirstOrDefault();
             return Page();
         }
 
@@ -33,8 +33,8 @@ namespace RahAsod.Areas.Admin.Pages.InsurancesDescription
         {
             if (ModelState.IsValid)
             {
-            AdminRepository.AddDescription(model);
-            AdminRepository.save();
+                AdminRepository.AddDescription(model);
+                AdminRepository.save();
 
             }
             return Page();

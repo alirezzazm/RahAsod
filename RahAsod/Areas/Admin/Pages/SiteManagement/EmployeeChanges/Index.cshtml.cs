@@ -23,9 +23,9 @@ namespace RahAsod.Areas.Admin.Pages.SiteManagement.EmployeeChanges
 
         public IEnumerable<Employee> employee { get;set; }
 
-        public async Task<IActionResult> OnGetAsync()
+        public IActionResult OnGet()
         {
-            employee = await AdminRepository.GetAllEmployees();
+            employee = AdminRepository.GetAllEmployees();
             return Page();
         }
 

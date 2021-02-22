@@ -83,9 +83,9 @@ namespace DataLayer.Services
 
 
         //Employee
-        public async Task<IEnumerable<Employee>> GetAllEmployees()
+        public IEnumerable<Employee> GetAllEmployees()
         {
-            return await _context.Employees.ToListAsync();
+            return _context.Employees;
         }
 
         public bool AddEmployee(Employee employee)
@@ -170,8 +170,48 @@ namespace DataLayer.Services
         }
         //EndOfficeInfo
 
+        //DescriptionTexts
+        public bool AddDescription(DescriptionTexts text)
+        {
+            try
+            {
+                _context.InsurancesDescriptionText.Add(text);
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        public IEnumerable<DescriptionTexts> GetBodyTexts()
+        {
+            return _context.InsurancesDescriptionText.Where(t => t.InsuranceType == "بدنه");
+        }
+
+        public IEnumerable<DescriptionTexts> GetThirdPartyTexts()
+        {
+            return _context.InsurancesDescriptionText.Where(t => t.InsuranceType == "شخص ثالث");
+        }
+
+        public IEnumerable<DescriptionTexts> GetLifeTexts()
+        {
+            return _context.InsurancesDescriptionText.Where(t => t.InsuranceType == "عمر");
+        }
+
+        public IEnumerable<DescriptionTexts> GetFireTexts()
+        {
+            return _context.InsurancesDescriptionText.Where(t => t.InsuranceType == "حريق");
+        }
+
+        public IEnumerable<DescriptionTexts> GetResponsibilityTexts()
+        {
+            return _context.InsurancesDescriptionText.Where(t => t.InsuranceType == "مسئوليت");
+        }
 
 
+
+        //EndDescriptionTexts
         public void Dispose()
         {
             _context.Dispose();
@@ -183,6 +223,6 @@ namespace DataLayer.Services
             _context.SaveChanges();
         }
 
-
+        
     }
 }

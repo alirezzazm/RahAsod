@@ -1,18 +1,19 @@
 ﻿@page
-@model RahAsod.Areas.Admin.Pages.InsurancesDescription.ThirdpartyDescriptionModel
+@model RahAsod.Areas.Admin.Pages.InsurancesDescription.ResponsibilityDescriptionModel
 @{
     Layout = "~/Areas/Admin/Pages/Shared/_AdminPanelLayout.cshtml";
 }
+
 
 <script src="https://cdn.ckeditor.com/4.16.0/full/ckeditor.js"></script>
 <div id="page-wrapper">
     <br />
     <div class="page-header">
-        <h3>بيمه شخص ثالث</h3>
+        <h3>بيمه مسئوليت</h3>
     </div>
     <form method="post">
         <div class="form-group">
-            <input type="hidden" asp-for="model.InsuranceType" class="form-control" value="شخص ثالث" />
+            <input type="hidden" asp-for="model.InsuranceType" class="form-control" value="مسئوليت" />
             <div>
                 <textarea asp-for="model.Text" id="Text" name="model.Text" class="form-control"></textarea>
             </div>
@@ -29,4 +30,3 @@
     });
 
 </script>
-

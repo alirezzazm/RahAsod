@@ -35,5 +35,6 @@ namespace DataLayer.Context
         public DbSet<Slider> SliderPics { get; set; }
         public DbSet<OfficeInfo> OfficeInfos { get; set; }
         public DbSet<Employee> Employees { get; set; }
+        public DbSet<DescriptionTexts> InsurancesDescriptionText { get; set; }
     }
 }

@@ -15,11 +15,9 @@ namespace RahAsod.Areas.Admin.Pages.SiteManagement.SliderPhoto
     public class IndexModel : PageModel
     {
         private readonly IAdminRepository AdminRepository;
-        private readonly InsuranceContext _context;
         public IndexModel(InsuranceContext context)
         {
             AdminRepository = new AdminRepository(context);
-            _context = context;
         }
 
         [BindProperty]
